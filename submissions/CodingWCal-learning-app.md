@@ -13,14 +13,14 @@ Fetched live from the Ludwitt/Hult metrics API (`GET /v1/apps/{app_id}/metrics`)
 
 | App ID | Metric | Value |
 |---|---|---|
-| `78f5ecd3-4f57-4f7b-9671-0477a1b49f9e` | unique_users | 4 |
-| `78f5ecd3-4f57-4f7b-9671-0477a1b49f9e` | qualified_users | 4 |
+| `78f5ecd3-4f57-4f7b-9671-0477a1b49f9e` | unique_users | 15 |
+| `78f5ecd3-4f57-4f7b-9671-0477a1b49f9e` | qualified_users | 15 |
 
 Admin snapshot export (CSV, `GET /v1/admin/cohorts/summer26/snapshots/2026-08-06`):
 
 ```csv
 app_id,student_handle,unique_users,qualified_users
-78f5ecd3-4f57-4f7b-9671-0477a1b49f9e,student-demo,4,4
+78f5ecd3-4f57-4f7b-9671-0477a1b49f9e,student-demo,15,15
 ```
 
 ## Promotion channels used
