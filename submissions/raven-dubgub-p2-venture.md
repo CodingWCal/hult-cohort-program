@@ -27,11 +27,11 @@ Qualified actions: `TEAM_CREATED`, `DEMO_LESSON_STARTED` (unique users counted i
 
 ## Metrics API snapshot (date-stamped)
 
-Captured **2026-08-09T23:45:30Z** from production:
+Captured **2026-08-13T22:18:39Z** from production:
 
 ```json
 {
-  "snapshot_at": "2026-08-09T23:45:30.386Z",
+  "snapshot_at": "2026-08-13T22:18:39.820Z",
   "app_namespace": "venture-agent-git-lab-teams",
   "total_users": 0,
   "total_teams": 0,
@@ -42,7 +42,7 @@ Captured **2026-08-09T23:45:30Z** from production:
 }
 ```
 
-**Pass gate note:** `qualified_users` must reach ≥25 before merge deadline. Joshua is promoting external signups on `/app`. Re-capture snapshot before final review.
+**Pass gate note:** `qualified_users` must reach ≥25 before merge deadline (Aug 19, 2026 17:00 ET). Joshua is promoting external signups on `/app` using `docs/USER-PUSH.md`. Re-capture snapshot before final review.
 
 ## Submission artifacts (repo paths)
 
@@ -55,7 +55,11 @@ Captured **2026-08-09T23:45:30Z** from production:
 | Pitch deck PDF | `docs/pitch-deck.pdf` | Complete (10 slides) |
 | One-pager PDF | `docs/one-pager.pdf` | Complete |
 | Pitch preview (web) | `/pitch` | Live |
-| Investor log | `INVESTOR_LOG.md` | Template ready; ≥1 touch **PENDING (Joshua)** |
+| Investor log | `INVESTOR_LOG.md` | 20 firms named; ≥1 touch **PENDING (Joshua)** |
+| User promotion copy | `docs/USER-PUSH.md` | Ready to post |
+| Interview script | `docs/INTERVIEW-SCRIPT.md` | Ready |
+| Investor email variants | `docs/investor-emails/` (5 files) | Templates ready |
+| Week plan | `WEEK-PLAN.md` | Aug 14–19 checklist |
 | Human-only checklist | `JOSHUA-TODO.md` | Documented |
 
 Regenerate PDFs: `npm run export:pdfs` in venture repo.
@@ -114,7 +118,7 @@ Browser → Next.js (Vercel) → Neon (users, teams, product events)
 
 ## Known limitations (human gates)
 
-- `qualified_users` is 0 at Aug 9 snapshot — external promotion in progress toward ≥25
+- `qualified_users` is 0 at Aug 13 snapshot — external promotion in progress toward ≥25 (see `docs/USER-PUSH.md`)
 - Five external customer interviews not yet completed (template ready)
 - Zero qualified investor touchpoints logged (target list + outreach pending)
 - PR merge requires staff review after pass gates met
@@ -127,7 +131,9 @@ Browser → Next.js (Vercel) → Neon (users, teams, product events)
 - [x] PDF artifacts committed in `docs/`
 - [x] `npm run test` passes (6 tests)
 - [x] `npm run build` passes
-- [x] `npm run lint` passes
+- [x] `npm run lint` passes (Aug 13, 2026)
+- [x] PDFs re-exported Aug 13, 2026
+- [x] Promotion + investor + interview docs ready
 - [ ] Joshua: ≥25 qualified external users on metrics snapshot
 - [ ] Joshua: ≥1 verified investor touch in `INVESTOR_LOG.md`
 - [ ] Joshua: 5 external customer interviews in `docs/market-research.md`
