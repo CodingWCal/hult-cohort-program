@@ -2,9 +2,12 @@ import { cookies } from "next/headers";
 import { JOB_TRACKS } from "@/lib/lessons";
 import { SessionHeartbeat } from "@/components/SessionHeartbeat";
 import { TrackPicker } from "@/components/TrackPicker";
+import { PracticeJournal } from "@/components/PracticeJournal";
 import type { LearnerSession } from "@/lib/session-types";
 
-export default async function PracticeIndexPage() {
+type Props = { searchParams: Promise<{ major?: string }> };
+
+export default async function PracticeIndexPage({ searchParams }: Props) {
   const jar = await cookies();
   const raw = jar.get("pf_session")?.value;
   let session: LearnerSession | null = null;
@@ -15,6 +18,8 @@ export default async function PracticeIndexPage() {
       session = null;
     }
   }
+
+  const { major } = await searchParams;
 
   const tracks = JOB_TRACKS.map((t) => ({
     slug: t.slug,
@@ -32,12 +37,17 @@ export default async function PracticeIndexPage() {
           ? `Candidate session · ${session.email}`
           : "Guest practice · counted after first question"}
       </p>
-      <h2>Job application tracks</h2>
+      <h2>Open a room</h2>
       <p className="support">
-        Search or filter by career major — healthcare, IT, education, trades, and more — then open
-        the role you’re interviewing for.
+        Filter by career major, pick the role you applied for, then drill a single prompt or start a
+        five-room mock loop.
       </p>
-      <TrackPicker tracks={tracks} />
+      <div className="practice-layout">
+        <div className="practice-main">
+          <TrackPicker tracks={tracks} initialFamily={major} />
+        </div>
+        <PracticeJournal />
+      </div>
     </section>
   );
 }

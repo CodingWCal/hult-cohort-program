@@ -1,6 +1,6 @@
 "use client";
 
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   TRACK_FAMILY_ORDER,
@@ -19,10 +19,24 @@ type TrackCard = {
 
 const FAMILIES: Array<TrackFamily | "All"> = ["All", ...TRACK_FAMILY_ORDER];
 
-export function TrackPicker({ tracks }: { tracks: TrackCard[] }) {
+export function TrackPicker({
+  tracks,
+  initialFamily,
+}: {
+  tracks: TrackCard[];
+  initialFamily?: string;
+}) {
+  const start: (typeof FAMILIES)[number] =
+    initialFamily && (FAMILIES as string[]).includes(initialFamily)
+      ? (initialFamily as TrackFamily)
+      : "All";
   const [query, setQuery] = useState("");
-  const [family, setFamily] = useState<(typeof FAMILIES)[number]>("All");
+  const [family, setFamily] = useState<(typeof FAMILIES)[number]>(start);
   const deferredQuery = useDeferredValue(query.trim().toLowerCase());
+
+  useEffect(() => {
+    setFamily(start);
+  }, [start]);
 
   const filtered = useMemo(() => {
     return tracks.filter((t) => {
@@ -77,6 +91,7 @@ export function TrackPicker({ tracks }: { tracks: TrackCard[] }) {
               </p>
               <h3>{track.role}</h3>
               <p>{track.blurb}</p>
+              <p className="meta track-loop-hint">Mock loop available</p>
             </Link>
           ))}
         </div>

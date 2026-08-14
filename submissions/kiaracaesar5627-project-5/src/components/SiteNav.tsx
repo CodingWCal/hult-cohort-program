@@ -8,7 +8,6 @@ const LINKS = [
   { href: "/investors", label: "Investors" },
   { href: "/metrics", label: "Metrics" },
   { href: "/privacy", label: "Privacy" },
-  { href: "/launch", label: "Launch" },
 ] as const;
 
 export function SiteNav() {

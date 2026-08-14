@@ -14,6 +14,7 @@ export default async function TrackPage({ params }: Props) {
   const { track: trackSlug } = await params;
   const track = getTrack(trackSlug);
   if (!track) notFound();
+  const first = track.scenarios[0];
 
   return (
     <section className="section" style={{ borderTop: "none", paddingTop: "2rem" }}>
@@ -23,8 +24,18 @@ export default async function TrackPage({ params }: Props) {
       </p>
       <h2>{track.role}</h2>
       <p className="support">{track.blurb}</p>
+      <div className="track-cta-row">
+        <Link href={`/practice/${track.slug}/loop`} className="btn primary">
+          Start mock loop (5 rooms)
+        </Link>
+        {first ? (
+          <Link href={`/practice/${track.slug}/${first.slug}`} className="btn">
+            Single question
+          </Link>
+        ) : null}
+      </div>
       <p className="meta" style={{ marginBottom: "1.25rem" }}>
-        {track.scenarios.length} interviewer questions
+        {track.scenarios.length} interviewer questions — drill one, or sit the loop
       </p>
       <div className="lesson-grid">
         {track.scenarios.map((s, i) => (

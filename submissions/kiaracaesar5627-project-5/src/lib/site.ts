@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Interview Room",
-  tagline: "Practice the interview for the job you’re applying to.",
+  tagline: "Sit across the table from the interview for the job you applied to.",
   description:
-    "Mock interview questions by job application track — 25 roles, interviewer prompts, playbooks, and session tracking on a Ludwitt-compatible API.",
+    "Role-specific mock interviews across 16 career majors and 320 tracks — speak mode, timers, playbooks, mock loops, and a private on-device practice journal.",
   topic: "Interview prep by role",
   handle: "kiaracaesar5627",
   cohort: "Hult Cohort Summer Pilot 2026",

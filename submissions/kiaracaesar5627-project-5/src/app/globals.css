@@ -596,6 +596,309 @@ a {
   max-width: 40rem;
 }
 
+.lesson-flow.room {
+  max-width: 56rem;
+}
+
+.timer.warn {
+  color: var(--accent-2);
+}
+
+.kbd-hint {
+  margin: 0.35rem 0 0;
+}
+
+.kbd-hint kbd {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.room-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .room-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.room-label {
+  margin: 1rem 0 0.35rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.speak-on .room-interviewer .interviewer {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
+  animation: speak-pulse 2.4s ease-in-out infinite;
+}
+
+.speak-coach {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-top: 2px solid var(--accent);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+@keyframes speak-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+}
+
+.self-score {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.self-score h2 {
+  font-family: var(--font-display);
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.score-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.score-pips {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.pip {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font: inherit;
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+.pip.on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.hero-table {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 26rem;
+  margin-left: auto;
+}
+
+.hero-desk {
+  padding: 1rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  transform: rotate(0.8deg);
+}
+
+.hero-desk p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.major-pills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.major-pills a {
+  display: inline-flex;
+  min-height: 2.1rem;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.major-pills a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.practice-layout {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 980px) {
+  .practice-layout {
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    align-items: start;
+  }
+}
+
+.journal-panel {
+  padding: 1.15rem 1.2rem;
+  background: color-mix(in srgb, var(--panel) 92%, white);
+  border-top: 3px solid var(--accent-2);
+}
+
+.journal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.journal-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0.15rem 0 0.75rem;
+}
+
+.journal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.journal-list a {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.journal-when {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.journal-detail {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.journal-recents {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.journal-recents a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.track-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.track-loop-hint {
+  margin-top: 0.55rem !important;
+  color: var(--accent-2) !important;
+}
+
+.loop-intro-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0 0 0.5rem;
+}
+
+.loop-scorecard {
+  padding: 1rem 0 2rem;
+  max-width: 40rem;
+}
+
+.loop-scorecard h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 0.75rem;
+}
+
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .scorecard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.scorecard-grid > div {
+  padding: 0.9rem 1rem;
+  background: var(--panel);
+  border-top: 3px solid var(--accent);
+}
+
+.scorecard-num {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+
+.loop-recap {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.loop-recap li {
+  display: grid;
+  gap: 0.15rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after,
+  .hero-copy,
+  .hero-stage,
+  .hero-card,
+  .section,
+  .btn,
+  .progress-track span,
+  .speak-on .room-interviewer .interviewer {
+    animation: none;
+    transition: none;
+  }
+}
+
 .lesson-head h1 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);

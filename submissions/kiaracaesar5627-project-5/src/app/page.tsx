@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { JOB_TRACKS } from "@/lib/lessons";
-import { TRACK_FAMILY_SHORT, trackFamily } from "@/lib/track-family";
+import { TRACK_FAMILY_ORDER, TRACK_FAMILY_SHORT, trackFamily } from "@/lib/track-family";
 import { SITE } from "@/lib/site";
+import { PracticeJournal } from "@/components/PracticeJournal";
 
 const FEATURED = [
   "registered-nurse",
@@ -21,56 +22,76 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Mock interviews by job application</p>
+          <p className="eyebrow">Not another flashcard bank</p>
           <h1>{SITE.name}</h1>
           <p className="lede">{SITE.tagline}</p>
           <div className="cta-row">
             <Link href="/practice" className="btn primary">
-              Start practicing
+              Open a room
             </Link>
-            <a className="btn" href="#how">
-              How it works
+            <a className="btn" href="#difference">
+              What makes it different
             </a>
           </div>
         </div>
         <div className="hero-stage" aria-hidden="true">
-          <div className="hero-card">
-            <p className="meta">Interviewer</p>
-            <p>
-              Walk me through a time you owned a miss — what did you do in the first forty-eight
-              hours?
-            </p>
+          <div className="hero-table">
+            <div className="hero-card">
+              <p className="meta">Interviewer</p>
+              <p>
+                Walk me through a time you owned a miss — what did you do in the first forty-eight
+                hours?
+              </p>
+            </div>
+            <div className="hero-desk">
+              <p className="meta">Your side</p>
+              <p>Timer · speak aloud · playbook when you need it · honest self-score</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section" id="how">
-        <h2>How a room works</h2>
+      <section className="section" id="difference">
+        <h2>Built like the interview, not a quiz</h2>
         <p className="support">
-          Pick the role you applied for. Answer the interviewer prompt on a timer. Debrief with a
-          structured check — no generic puzzle dump.
+          Most prep tools dump generic questions. Interview Room puts you across the table from a
+          role-specific interviewer — with a mock loop that feels like interview day.
         </p>
         <ol className="how-steps">
           <li>
-            <strong>Choose a track</strong>
-            <span>320 roles · 25 interviewer questions each</span>
+            <strong>320 job tracks</strong>
+            <span>16 career majors · 25 prompts each · the role you applied for</span>
           </li>
           <li>
-            <strong>Answer under time</strong>
-            <span>Scratch notes + optional playbook reveal</span>
+            <strong>Speak mode + timer</strong>
+            <span>Answer out loud under the clock — Space, S, and P shortcuts</span>
           </li>
           <li>
-            <strong>Debrief</strong>
-            <span>Lock the strongest read, then take the next question</span>
+            <strong>Mock loop</strong>
+            <span>Five rooms in one sitting, then a private scorecard on this device</span>
           </li>
         </ol>
       </section>
 
+      <section className="section majors-strip">
+        <h2>Sixteen majors</h2>
+        <p className="support">From healthcare to trades to government — not only tech and finance.</p>
+        <ul className="major-pills">
+          {TRACK_FAMILY_ORDER.map((f) => (
+            <li key={f}>
+              <Link href={`/practice?major=${encodeURIComponent(f)}`}>{TRACK_FAMILY_SHORT[f]}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="section journal-home">
+        <PracticeJournal compact />
+      </section>
+
       <section className="section" id="tracks">
-        <h2>Start with a common loop</h2>
-        <p className="support">
-          Featured tracks — open any, or browse the full catalog on Practice.
-        </p>
+        <h2>Open a featured room</h2>
+        <p className="support">Or browse the full catalog — then run a mock loop on any track.</p>
         <div className="lesson-grid">
           {featured.map((track) => (
             <Link key={track.slug} href={`/practice/${track.slug}`} className="lesson-link">
