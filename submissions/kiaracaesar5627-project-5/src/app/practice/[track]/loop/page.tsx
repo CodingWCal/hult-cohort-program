@@ -8,15 +8,21 @@ import { MockLoopClient } from "@/components/MockLoopClient";
 
 type Props = { params: Promise<{ track: string }> };
 
-/** Spread picks across the bank so a loop feels like a real day, not Q1–Q5. */
-function pickLoopScenarios<T>(all: T[], count: number): T[] {
-  if (all.length <= count) return [...all];
-  const step = Math.floor(all.length / count);
-  const picks: T[] = [];
-  for (let i = 0; i < count; i++) {
-    picks.push(all[Math.min(i * step, all.length - 1)]!);
+/** Mix core bank + cutting-edge Edge rooms so a loop trains modern signals. */
+function pickLoopScenarios<T extends { stage: string }>(all: T[], count: number): T[] {
+  const edge = all.filter((s) => s.stage === "Edge");
+  const core = all.filter((s) => s.stage !== "Edge");
+  const edgeTake = Math.min(2, edge.length, count);
+  const coreTake = count - edgeTake;
+  const corePicks: T[] = [];
+  if (core.length && coreTake > 0) {
+    const step = Math.max(1, Math.floor(core.length / coreTake));
+    for (let i = 0; i < coreTake; i++) {
+      corePicks.push(core[Math.min(i * step, core.length - 1)]!);
+    }
   }
-  return picks;
+  const edgePicks = edge.slice(0, edgeTake);
+  return [...corePicks, ...edgePicks].slice(0, count);
 }
 
 export function generateStaticParams() {
@@ -51,8 +57,8 @@ export default async function MockLoopPage({ params }: Props) {
       </p>
       <h2 className="loop-intro-title">{track.role} interview day</h2>
       <p className="support" style={{ marginBottom: "1.5rem" }}>
-        Five rooms in one sitting — timer, speak mode, debrief, and self-score after each. Closer to
-        the real loop than drilling one prompt forever.
+        Five rooms in one sitting — including cutting-edge Edge prompts — with timer, speak mode,
+        debrief, and self-score after each.
       </p>
       <MockLoopClient
         trackSlug={track.slug}

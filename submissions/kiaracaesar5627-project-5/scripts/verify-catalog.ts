@@ -16,7 +16,7 @@ for (const def of TRACK_DEFS) {
   byFamily.set(def.family, (byFamily.get(def.family) ?? 0) + 1);
 
   const scenarios = buildScenarios(def);
-  if (scenarios.length !== 25) {
+  if (scenarios.length !== 30) {
     throw new Error(`${def.slug} has ${scenarios.length} scenarios`);
   }
   for (const s of scenarios) {
@@ -25,8 +25,12 @@ for (const def of TRACK_DEFS) {
     }
   }
   const scenarioSlugs = new Set(scenarios.map((s) => s.slug));
-  if (scenarioSlugs.size !== 25) {
+  if (scenarioSlugs.size !== 30) {
     throw new Error(`${def.slug} has duplicate scenario slugs`);
+  }
+  const edge = scenarios.filter((s) => s.stage === "Edge");
+  if (edge.length !== 5) {
+    throw new Error(`${def.slug} expected 5 Edge questions, got ${edge.length}`);
   }
 }
 
@@ -39,5 +43,6 @@ for (const fam of TRACK_FAMILY_ORDER) {
 }
 
 console.log("total_tracks", TRACK_DEFS.length);
-console.log("questions_per_track", 25);
+console.log("questions_per_track", 30);
+console.log("edge_questions_per_track", 5);
 console.log("OK");

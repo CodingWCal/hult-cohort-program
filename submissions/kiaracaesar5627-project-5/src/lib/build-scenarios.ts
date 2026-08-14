@@ -17,7 +17,7 @@ function t(def: TrackDef, i: number): string {
   return def.themes[i % def.themes.length];
 }
 
-/** 25 role-aware templates; themes/role/setting injected so tracks diverge. */
+/** 30 role-aware templates; last five are cutting-edge interview edges. */
 const TEMPLATES: Template[] = [
   {
     id: "q01-core-challenge",
@@ -766,11 +766,162 @@ const TEMPLATES: Template[] = [
         "Judgment shows in what you ask.",
       ),
   },
+  // —— Cutting-edge five: modern signals that separate strong candidates ——
+  {
+    id: "q26-edge-ai-judgment",
+    stage: "Edge",
+    title: () => "AI tools without losing the craft",
+    minutes: 14,
+    summary: "Use modern tools; keep accountability and verification.",
+    scenario: (def) =>
+      `${def.role} edge screen. Interviewers assume AI is available for ${t(def, 0)} work and want judgment, not denial or blind trust.`,
+    interviewer: (def) =>
+      `How would you use AI or automation as a ${def.role} for ${t(def, 0)} in a ${def.setting}—what would you let it draft, what would you never outsource, and how would you verify before anyone relies on it?`,
+    playbook: (def) => [
+      `Name a concrete ${t(def, 0)} task AI could accelerate.`,
+      "State what stays human: judgment, accountability, relationships.",
+      "Describe a verification step before shipping or advising.",
+      "Call out a failure mode (hallucination, bias, privacy).",
+      "Tie the workflow back to standards in this setting.",
+    ],
+    debrief: () =>
+      d(
+        "Cutting-edge answers show:",
+        [
+          "I never use AI / I always paste whatever it says",
+          "Clear divide: accelerate drafts, keep judgment, verify before trust",
+          "Only tool brand names",
+          "Ignoring privacy or accuracy risk",
+        ],
+        1,
+        "Tool fluency + verification is the modern bar.",
+      ),
+  },
+  {
+    id: "q27-edge-ambiguity",
+    stage: "Edge",
+    title: () => "Vague brief, real deadline",
+    minutes: 16,
+    summary: "Create clarity when the ask is unfinished.",
+    scenario: (def) =>
+      `${def.setting}. A stakeholder drops a fuzzy request tied to ${t(def, 1)} with a hard date. Ambiguity is the test.`,
+    interviewer: (def) =>
+      `A stakeholder says “just make ${t(def, 1)} better by Friday” with almost no detail. As a ${def.role}, what clarifying questions do you ask in the first ten minutes, and what do you deliver if they stay vague?`,
+    playbook: (def) => [
+      "Restate the decision the work must enable.",
+      `Ask how “better” is measured for ${t(def, 1)}.`,
+      "Confirm audience, constraints, and non-goals.",
+      "Propose a thin first deliverable and a check-in.",
+      "Document assumptions if they won’t decide.",
+    ],
+    debrief: () =>
+      d(
+        "Under ambiguity you should:",
+        [
+          "Build a huge solution in silence",
+          "Clarify success, ship a thin slice, document assumptions",
+          "Wait forever for a perfect brief",
+          "Guess and blame them later",
+        ],
+        1,
+        "Clarity creation is a senior skill.",
+      ),
+  },
+  {
+    id: "q28-edge-influence",
+    stage: "Edge",
+    title: () => "Change minds without authority",
+    minutes: 14,
+    summary: "Cross-functional persuasion with evidence.",
+    scenario: (def) =>
+      `${def.role} loop. Another function blocks a needed change around ${t(def, 2)}.`,
+    interviewer: (def) =>
+      `You need another team to change how they handle ${t(def, 2)}, but you don’t manage them. How would you build the case and get to a decision without burning the relationship?`,
+    playbook: (def) => [
+      "Map their goals and constraints, not just yours.",
+      `Bring evidence on ${t(def, 2)} impact—not opinions.`,
+      "Offer options with tradeoffs, not a single demand.",
+      "Find a shared experiment or pilot.",
+      "Escalate with facts only after a good-faith try.",
+    ],
+    debrief: () =>
+      d(
+        "Influence without authority looks like:",
+        [
+          "CC storms and public pressure first",
+          "Their goals, evidence, options, then escalate if needed",
+          "Giving up immediately",
+          "Secret workarounds that hide risk",
+        ],
+        1,
+        "Shared goals beat positional power.",
+      ),
+  },
+  {
+    id: "q29-edge-learning-velocity",
+    stage: "Edge",
+    title: () => "Field moved — you kept up",
+    minutes: 12,
+    summary: "Prove you can retool when the craft changes.",
+    scenario: (def) =>
+      `Hiring managers for ${def.role} want learning velocity around ${t(def, 3)}, not a static skill list.`,
+    interviewer: (def) =>
+      `Tell me about a time the expectations for ${t(def, 3)} in your field shifted and you had to retool quickly. What did you learn, how did you practice it, and how did the quality of your ${def.role} work change?`,
+    playbook: (def) => [
+      "Name the shift (tool, standard, regulation, or market).",
+      "How you diagnosed the gap in your practice.",
+      "A deliberate learning loop: source → practice → feedback.",
+      `Evidence the ${def.role} outcome improved.`,
+      "What you still monitor as the field moves.",
+    ],
+    debrief: () =>
+      d(
+        "Learning-velocity stories need:",
+        [
+          "A course certificate with no application",
+          "Shift, practice loop, and a better work outcome",
+          "Blaming the industry",
+          "Claiming you never need to relearn",
+        ],
+        1,
+        "Applied retooling beats résumé courses.",
+      ),
+  },
+  {
+    id: "q30-edge-ethics-pressure",
+    stage: "Edge",
+    title: () => "Integrity when speed is rewarded",
+    minutes: 14,
+    summary: "Modern pressure tests: privacy, safety, honesty, shortcuts.",
+    scenario: (def) =>
+      `${def.setting}. Speed is celebrated; a shortcut would touch ${t(def, 4)} or trust. This is the edge that wins offers—or ends them.`,
+    interviewer: (def) =>
+      `Leadership wants a faster result on ${t(def, 4)} in a way that feels ethically or professionally gray. As a ${def.role}, how do you respond in the room, what alternative do you offer, and where is your hard stop?`,
+    playbook: () => [
+      "Name the risk in plain language (people, trust, compliance).",
+      "Acknowledge the real deadline pressure.",
+      "Offer a safer path that still moves the goal.",
+      "State your hard stop without theatrical defiance.",
+      "Document and escalate through the right channel if needed.",
+    ],
+    debrief: () =>
+      d(
+        "Integrity under pressure means:",
+        [
+          "Silent compliance with the gray ask",
+          "Name the risk, offer a safer path, hold a clear hard stop",
+          "Public shaming as the first move",
+          "Only saying no with no alternative",
+        ],
+        1,
+        "Hard stops with options earn trust.",
+      ),
+  },
 ];
 
 export function buildScenarios(def: TrackDef): InterviewScenario[] {
-  if (TEMPLATES.length !== 25) {
-    throw new Error(`Expected 25 templates, got ${TEMPLATES.length}`);
+  if (TEMPLATES.length !== 30) {
+    throw new Error(`Expected 30 templates, got ${TEMPLATES.length}`);
   }
   return TEMPLATES.map((tpl) => {
     const interviewer = tpl.interviewer(def).trim();

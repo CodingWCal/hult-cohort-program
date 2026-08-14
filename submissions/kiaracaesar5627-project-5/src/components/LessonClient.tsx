@@ -218,6 +218,7 @@ export function InterviewRoundClient({
         <div className="round-meta-row">
           <p className="eyebrow">
             {role} · {stage}
+            {stage === "Edge" ? " · Cutting edge" : ""}
             {mode === "loop" ? " · Mock loop" : ""}
           </p>
           <p className="meta">

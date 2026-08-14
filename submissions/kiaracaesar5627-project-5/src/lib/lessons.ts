@@ -9,8 +9,8 @@ export { trackFamily };
 
 export const JOB_TRACKS: JobTrack[] = TRACK_DEFS.map((def) => {
   const scenarios = buildScenarios(def);
-  if (scenarios.length !== 25) {
-    throw new Error(`Track ${def.slug} has ${scenarios.length} scenarios; need exactly 25`);
+  if (scenarios.length !== 30) {
+    throw new Error(`Track ${def.slug} has ${scenarios.length} scenarios; need exactly 30`);
   }
   return {
     slug: def.slug,

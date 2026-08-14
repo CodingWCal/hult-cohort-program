@@ -10,7 +10,7 @@ import { SessionHeartbeat } from "@/components/SessionHeartbeat";
 
 type Props = { params: Promise<{ track: string; slug: string }> };
 
-/** On-demand: 320 tracks × 25 questions would SSG ~8k pages and blow the build. */
+/** On-demand: 320 tracks × 30 questions would SSG ~10k pages and blow the build. */
 export const dynamicParams = true;
 
 export function generateStaticParams() {
