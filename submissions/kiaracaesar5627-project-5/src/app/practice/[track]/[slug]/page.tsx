@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import {
   getRound,
-  JOB_TRACKS,
   nextRoundInTrack,
   roundIndexInTrack,
   roundPath,
@@ -11,10 +10,11 @@ import { SessionHeartbeat } from "@/components/SessionHeartbeat";
 
 type Props = { params: Promise<{ track: string; slug: string }> };
 
+/** On-demand: 320 tracks × 25 questions would SSG ~8k pages and blow the build. */
+export const dynamicParams = true;
+
 export function generateStaticParams() {
-  return JOB_TRACKS.flatMap((t) =>
-    t.scenarios.map((s) => ({ track: t.slug, slug: s.slug })),
-  );
+  return [];
 }
 
 export default async function ScenarioPage({ params }: Props) {

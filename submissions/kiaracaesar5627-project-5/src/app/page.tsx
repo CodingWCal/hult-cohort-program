@@ -53,7 +53,7 @@ export default function HomePage() {
         <ol className="how-steps">
           <li>
             <strong>Choose a track</strong>
-            <span>25 roles · 20 interviewer questions each</span>
+            <span>320 roles · 25 interviewer questions each</span>
           </li>
           <li>
             <strong>Answer under time</strong>

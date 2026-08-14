@@ -12,7 +12,7 @@ export default function InvestorsPage() {
       <p className="lede">{SITE.tagline}</p>
       <p>
         Most interview products coach a generic “interview.” {SITE.name} coaches
-        the <em>job the candidate applied to</em> — 25 tracks, 20 interviewer
+        the <em>job the candidate applied to</em> — 320 tracks, 25 interviewer
         prompts each, with a playbook and a debrief. Production app:{" "}
         <a className="text-link" href="https://kiaracaesar5627-project-4.vercel.app">
           kiaracaesar5627-project-4.vercel.app
@@ -29,7 +29,7 @@ export default function InvestorsPage() {
       </p>
       <h2>Product</h2>
       <ul>
-        <li>500 interviewer-phrased scenarios across 25 roles</li>
+        <li>8,000 interviewer-phrased scenarios across 320 roles</li>
         <li>Guest practice in the browser; Ludwitt/Hult JWT launch for platform learners</li>
         <li>Evented learning API (own /v1 instance) for qualified-user metrics</li>
       </ul>
