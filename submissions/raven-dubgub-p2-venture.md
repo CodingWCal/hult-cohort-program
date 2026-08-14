@@ -42,7 +42,7 @@ Captured **2026-08-13T22:18:39Z** from production:
 }
 ```
 
-**Pass gate note:** `qualified_users` must reach ≥25 before merge deadline (Aug 19, 2026 17:00 ET). Joshua is promoting external signups on `/app` using `docs/USER-PUSH.md`. Re-capture snapshot before final review.
+**Pass gate note:** `qualified_users` must reach ≥25 before merge deadline (Sun Aug 16, 2026 17:00 ET). Joshua is promoting external signups on `/app` using `docs/USER-PUSH.md`. Re-capture snapshot before final review.
 
 ## Submission artifacts (repo paths)
 
@@ -118,7 +118,7 @@ Browser → Next.js (Vercel) → Neon (users, teams, product events)
 
 ## Known limitations (human gates)
 
-- `qualified_users` is 0 at Aug 13 snapshot — external promotion in progress toward ≥25 (see `docs/USER-PUSH.md`)
+- `qualified_users` is 0 at Aug 14 snapshot — external promotion in progress toward ≥25 (see `docs/USER-PUSH.md`)
 - Five external customer interviews not yet completed (template ready)
 - Zero qualified investor touchpoints logged (target list + outreach pending)
 - PR merge requires staff review after pass gates met
