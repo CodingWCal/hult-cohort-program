@@ -2,7 +2,12 @@
 
 import { useDeferredValue, useMemo, useState } from "react";
 import Link from "next/link";
-import { trackFamily, type TrackFamily } from "@/lib/track-family";
+import {
+  TRACK_FAMILY_ORDER,
+  TRACK_FAMILY_SHORT,
+  trackFamily,
+  type TrackFamily,
+} from "@/lib/track-family";
 
 type TrackCard = {
   slug: string;
@@ -12,13 +17,7 @@ type TrackCard = {
   count: number;
 };
 
-const FAMILIES: Array<TrackFamily | "All"> = [
-  "All",
-  "Product & tech",
-  "Go-to-market",
-  "Business & finance",
-  "People & ops",
-];
+const FAMILIES: Array<TrackFamily | "All"> = ["All", ...TRACK_FAMILY_ORDER];
 
 export function TrackPicker({ tracks }: { tracks: TrackCard[] }) {
   const [query, setQuery] = useState("");
@@ -30,7 +29,7 @@ export function TrackPicker({ tracks }: { tracks: TrackCard[] }) {
       const fam = trackFamily(t.slug);
       if (family !== "All" && fam !== family) return false;
       if (!deferredQuery) return true;
-      const hay = `${t.role} ${t.setting} ${t.blurb} ${fam}`.toLowerCase();
+      const hay = `${t.role} ${t.setting} ${t.blurb} ${fam} ${TRACK_FAMILY_SHORT[fam]}`.toLowerCase();
       return hay.includes(deferredQuery);
     });
   }, [tracks, family, deferredQuery]);
@@ -42,27 +41,29 @@ export function TrackPicker({ tracks }: { tracks: TrackCard[] }) {
           <span className="sr-only">Search tracks</span>
           <input
             type="search"
-            placeholder="Search roles — FP&A, consulting, CS…"
+            placeholder="Search roles — nurse, teacher, engineer…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoComplete="off"
           />
         </label>
-        <div className="family-chips" role="group" aria-label="Track family">
+        <div className="family-chips" role="group" aria-label="Career major">
           {FAMILIES.map((f) => (
             <button
               key={f}
               type="button"
               className={family === f ? "chip active" : "chip"}
               onClick={() => setFamily(f)}
+              title={f === "All" ? "All majors" : f}
             >
-              {f}
+              {f === "All" ? "All" : TRACK_FAMILY_SHORT[f]}
             </button>
           ))}
         </div>
       </div>
       <p className="meta track-count">
         {filtered.length} of {tracks.length} tracks
+        {family !== "All" ? ` · ${family}` : ""}
       </p>
       {filtered.length === 0 ? (
         <p className="support">No tracks match. Try another role name or clear the filter.</p>
@@ -71,7 +72,8 @@ export function TrackPicker({ tracks }: { tracks: TrackCard[] }) {
           {filtered.map((track) => (
             <Link key={track.slug} href={`/practice/${track.slug}`} className="lesson-link">
               <p className="meta">
-                {trackFamily(track.slug)} · {track.setting} · {track.count} questions
+                {TRACK_FAMILY_SHORT[trackFamily(track.slug)]} · {track.setting} · {track.count}{" "}
+                questions
               </p>
               <h3>{track.role}</h3>
               <p>{track.blurb}</p>

@@ -406,12 +406,12 @@ a {
 }
 
 .chip {
-  min-height: 2.25rem;
-  padding: 0.35rem 0.8rem;
+  min-height: 2.1rem;
+  padding: 0.3rem 0.65rem;
   border: 1px solid var(--line);
   background: transparent;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   cursor: pointer;
   color: var(--muted);
 }

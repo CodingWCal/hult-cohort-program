@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { JOB_TRACKS } from "@/lib/lessons";
-import { trackFamily } from "@/lib/track-family";
+import { TRACK_FAMILY_SHORT, trackFamily } from "@/lib/track-family";
 import { SITE } from "@/lib/site";
 
 const FEATURED = [
+  "registered-nurse",
   "software-engineer",
-  "product-manager",
-  "finance-fpa",
-  "management-consulting",
-  "customer-success",
-  "investment-banking",
+  "high-school-teacher",
+  "civil-engineer",
+  "attorney",
+  "social-worker",
 ];
 
 export default function HomePage() {
@@ -75,7 +75,7 @@ export default function HomePage() {
           {featured.map((track) => (
             <Link key={track.slug} href={`/practice/${track.slug}`} className="lesson-link">
               <p className="meta">
-                {trackFamily(track.slug)} · {track.scenarios.length} questions
+                {TRACK_FAMILY_SHORT[trackFamily(track.slug)]} · {track.scenarios.length} questions
               </p>
               <h3>{track.role}</h3>
               <p>{track.blurb}</p>

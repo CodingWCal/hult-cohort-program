@@ -1,5 +1,6 @@
 import { q, d, type InterviewScenario, type JobTrack } from "./track-model";
 import { BUSINESS_JOB_TRACKS } from "./business-tracks";
+import { CAREER_MAJOR_TRACKS } from "./career-major-tracks";
 import { EXTRA_BY_TRACK } from "./track-extras";
 
 export type { Debrief, InterviewScenario, JobTrack } from "./track-model";
@@ -2803,7 +2804,11 @@ import { trackFamily, type TrackFamily } from "./track-family";
 export type { TrackFamily };
 export { trackFamily };
 
-export const JOB_TRACKS: JobTrack[] = withExtras([...CORE_JOB_TRACKS, ...BUSINESS_JOB_TRACKS]);
+export const JOB_TRACKS: JobTrack[] = withExtras([
+  ...CORE_JOB_TRACKS,
+  ...BUSINESS_JOB_TRACKS,
+  ...CAREER_MAJOR_TRACKS,
+]);
 
 export type InterviewRound = InterviewScenario & {
   trackSlug: string;

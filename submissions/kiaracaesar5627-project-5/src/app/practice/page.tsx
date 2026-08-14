@@ -34,7 +34,8 @@ export default async function PracticeIndexPage() {
       </p>
       <h2>Job application tracks</h2>
       <p className="support">
-        Search or filter by family, then open the role you’re interviewing for.
+        Search or filter by career major — healthcare, IT, education, trades, and more — then open
+        the role you’re interviewing for.
       </p>
       <TrackPicker tracks={tracks} />
     </section>
