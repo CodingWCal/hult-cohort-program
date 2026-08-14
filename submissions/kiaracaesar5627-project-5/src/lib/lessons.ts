@@ -2798,6 +2798,11 @@ const CORE_JOB_TRACKS: JobTrack[] = [
   },
 ];
 
+import { trackFamily, type TrackFamily } from "./track-family";
+
+export type { TrackFamily };
+export { trackFamily };
+
 export const JOB_TRACKS: JobTrack[] = withExtras([...CORE_JOB_TRACKS, ...BUSINESS_JOB_TRACKS]);
 
 export type InterviewRound = InterviewScenario & {
@@ -2825,6 +2830,28 @@ export function getRound(trackSlug: string, scenarioSlug: string): InterviewRoun
 
 export function roundPath(round: InterviewRound): string {
   return `/practice/${round.trackSlug}/${round.slug}`;
+}
+
+export function nextRoundInTrack(
+  trackSlug: string,
+  scenarioSlug: string,
+): InterviewRound | undefined {
+  const track = getTrack(trackSlug);
+  if (!track) return undefined;
+  const idx = track.scenarios.findIndex((s) => s.slug === scenarioSlug);
+  if (idx < 0 || idx >= track.scenarios.length - 1) return undefined;
+  const next = track.scenarios[idx + 1];
+  return getRound(trackSlug, next.slug);
+}
+
+export function roundIndexInTrack(trackSlug: string, scenarioSlug: string): {
+  index: number;
+  total: number;
+} {
+  const track = getTrack(trackSlug);
+  if (!track) return { index: 0, total: 0 };
+  const index = track.scenarios.findIndex((s) => s.slug === scenarioSlug);
+  return { index: index < 0 ? 0 : index, total: track.scenarios.length };
 }
 
 export const LESSONS = ROUNDS;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE, siteUrl } from "@/lib/site";
 import { EnsurePracticeSession } from "@/components/EnsurePracticeSession";
+import { SiteNav } from "@/components/SiteNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,13 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="brand">
               {SITE.name}
             </Link>
-            <nav className="nav" aria-label="Primary">
-              <Link href="/practice">Practice</Link>
-              <Link href="/investors">Investors</Link>
-              <Link href="/metrics">Metrics</Link>
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/launch">Launch</Link>
-            </nav>
+            <SiteNav />
           </header>
           <main>
             <EnsurePracticeSession />
