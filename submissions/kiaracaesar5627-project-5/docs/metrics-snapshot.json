@@ -1,0 +1,33 @@
+{
+  "source": "own-reference-api",
+  "instance": "https://kiaracaesar5627-project-4.vercel.app",
+  "app_id": "7f3e9c2a-4b1d-4e8f-9a6c-2d5e8f1a3b7c",
+  "fetched_at": "2026-08-13T21:22:30.958Z",
+  "public_status": 200,
+  "public": {
+    "unique_users": 0,
+    "qualified_users": 0,
+    "as_of": "2026-08-13T21:22:30.958Z",
+    "source": "own-reference-api",
+    "persist_mode": "tmp-json",
+    "app_id": "7f3e9c2a-4b1d-4e8f-9a6c-2d5e8f1a3b7c",
+    "instance": "same-origin /v1 on Interview Room",
+    "note": "Cohort handles and user ids containing the student handle are not counted."
+  },
+  "authenticated_status": 200,
+  "authenticated": {
+    "unique_users": 0,
+    "qualified_users": 0,
+    "as_of": "2026-08-13T21:22:31.254Z",
+    "source": "own-reference-api",
+    "persist_mode": "tmp-json"
+  },
+  "health": {
+    "ok": true,
+    "service": "ludwitt-hult-api",
+    "host": "interview-room",
+    "app_id": "7f3e9c2a-4b1d-4e8f-9a6c-2d5e8f1a3b7c",
+    "persist_mode": "tmp-json"
+  },
+  "note": "Fetched 2026-08-13T21:22:30.958Z from GET /api/metrics-public and GET /v1/apps/{id}/metrics (Bearer prod_key_demo) on the production same-origin reference API. Hosted Ludwitt was not used. unique_users=0, qualified_users=0 on this stamp — the ≥25 gate is not met. This is not a self-report."
+}
