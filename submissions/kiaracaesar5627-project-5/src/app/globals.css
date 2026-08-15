@@ -115,7 +115,7 @@ a {
   outline-offset: 2px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .nav-toggle {
     display: inline-flex;
     align-items: center;
@@ -1136,6 +1136,41 @@ a {
 
 .prose-page ul {
   line-height: 1.55;
+}
+
+.tip-groups {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.tip-card {
+  padding: 1.25rem 1.35rem 1.4rem;
+  background: color-mix(in srgb, var(--panel) 90%, white);
+  border-left: 3px solid var(--accent);
+}
+
+.tip-card h2 {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1.35rem;
+}
+
+.tip-lead {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+.tip-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.tip-card li + li {
+  margin-top: 0.45rem;
 }
 
 .slide {

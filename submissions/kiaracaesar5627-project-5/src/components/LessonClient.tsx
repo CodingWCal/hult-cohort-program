@@ -49,6 +49,11 @@ export function AnswerReview({ feedback }: { feedback: ResponseFeedback }) {
             <li key={line}>{line}</li>
           ))}
         </ul>
+        <p className="support tight" style={{ marginTop: "0.75rem" }}>
+          <Link href="/tips" className="text-link">
+            Full pro tips
+          </Link>
+        </p>
       </div>
     </aside>
   );
