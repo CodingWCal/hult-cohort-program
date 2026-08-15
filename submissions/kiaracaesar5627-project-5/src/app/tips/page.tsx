@@ -7,12 +7,12 @@ export const metadata: Metadata = { title: "Pro tips" };
 export default function ProTipsPage() {
   return (
     <article className="section prose-page" style={{ borderTop: "none", paddingTop: "2rem" }}>
-      <p className="eyebrow">Interview day · not a flashcard dump</p>
+      <p className="eyebrow">Simple advice for interview day</p>
       <h1>Pro tips for interviews</h1>
       <p className="support">
-        How to sit in the room: structure, evidence, gray asks, and what to cut. Same advice the
-        practice rooms use when you hit Review my answer — written here so you can read it before
-        you speak.
+        How to start, tell a clear story, use one real example, and handle a hard question. This is
+        the same kind of advice you get when you tap Review my answer in a practice room — written
+        here so you can read it before you speak.
       </p>
       <p className="cta-row" style={{ marginBottom: "2rem" }}>
         <Link href="/practice" className="btn primary">
