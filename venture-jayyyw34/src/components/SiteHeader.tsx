@@ -26,7 +26,7 @@ export function SiteHeader() {
         </Link>
         <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
           <Link href="/browse" className="hover:text-[var(--clay)]">
-            Tonight’s menus
+            Today’s menus
           </Link>
           <Link href="/cook" className="hover:text-[var(--clay)]">
             List a dish

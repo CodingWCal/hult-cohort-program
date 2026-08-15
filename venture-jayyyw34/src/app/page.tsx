@@ -34,7 +34,7 @@ export default function HomePage() {
               href="/browse"
               className="rounded-full bg-[var(--clay)] px-5 py-2.5 text-sm text-white"
             >
-              Browse tonight’s menus
+              Browse today’s menus
             </Link>
             <Link
               href="/join"

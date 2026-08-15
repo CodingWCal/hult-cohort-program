@@ -46,7 +46,7 @@ export default function BrowsePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="font-serif text-4xl">Tonight’s menus</h1>
+      <h1 className="font-serif text-4xl">Today’s menus</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
         Menus change with the Trinidad & Tobago day. Cook-listed dishes stay.
         Filter by island, town, and daypart.

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { readSession } from "@/lib/session";
+import { formatPrice } from "@/lib/format";
 import { islandForTown, townsForIsland } from "@/lib/place";
 import { NEIGHBORHOODS, type Account, type Island, type Listing, type Pepper } from "@/lib/types";
 
@@ -93,8 +94,58 @@ export default function CookPage() {
       return;
     }
     setSaved(data.listing);
-    setTitle("");
-    setDescription("");
+  }
+
+  if (saved) {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-14">
+        <div className="wrap-card rounded-3xl p-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--sage)]">
+            Listed
+          </p>
+          <h1 className="mt-2 font-serif text-4xl">It’s on today’s menu.</h1>
+          <p className="mt-3 text-[var(--muted)]">
+            Neighbours can see this plate and reserve pickup. No payment in this
+            MVP.
+          </p>
+          <div className="mt-6 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <h2 className="font-serif text-2xl">{saved.title}</h2>
+            <p className="mt-2 text-sm text-[var(--muted)]">
+              {saved.neighborhood} · {saved.pickupWindow} · {saved.servingsLeft}{" "}
+              plates · {formatPrice(saved.priceCents)}
+            </p>
+            {saved.description ? (
+              <p className="mt-3 text-sm leading-relaxed">{saved.description}</p>
+            ) : null}
+          </div>
+          <div className="mt-6 flex flex-col gap-3">
+            <Link
+              href={`/dish/${saved.id}`}
+              className="inline-flex justify-center rounded-full bg-[var(--clay)] px-5 py-2.5 text-sm text-white"
+            >
+              View the listing
+            </Link>
+            <Link
+              href="/browse"
+              className="inline-flex justify-center rounded-full border border-[var(--ink)] px-5 py-2.5 text-sm"
+            >
+              See today’s menus
+            </Link>
+            <button
+              type="button"
+              className="text-sm text-[var(--sage)]"
+              onClick={() => {
+                setSaved(null);
+                setTitle("");
+                setDescription("");
+              }}
+            >
+              List another dish
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -218,14 +269,6 @@ export default function CookPage() {
           />
         </label>
         {error ? <p className="text-sm text-red-700">{error}</p> : null}
-        {saved ? (
-          <p className="text-sm text-[var(--sage)]">
-            Listed.{" "}
-            <Link href={`/dish/${saved.id}`} className="underline">
-              View {saved.title}
-            </Link>
-          </p>
-        ) : null}
         <button
           disabled={pending}
           className="w-full rounded-full bg-[var(--clay)] py-2.5 text-sm text-white disabled:opacity-60"
