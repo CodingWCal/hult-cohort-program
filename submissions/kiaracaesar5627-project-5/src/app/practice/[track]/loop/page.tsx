@@ -58,7 +58,7 @@ export default async function MockLoopPage({ params }: Props) {
       <h2 className="loop-intro-title">{track.role} interview day</h2>
       <p className="support" style={{ marginBottom: "1.5rem" }}>
         Five rooms in one sitting — including cutting-edge Edge prompts — with timer, speak mode,
-        debrief, and self-score after each.
+        answer review, debrief, and self-score after each.
       </p>
       <MockLoopClient
         trackSlug={track.slug}

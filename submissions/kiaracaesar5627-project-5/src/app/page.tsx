@@ -67,6 +67,10 @@ export default function HomePage() {
             <span>Answer out loud under the clock — Space, S, and P shortcuts</span>
           </li>
           <li>
+            <strong>Answer review + interview tips</strong>
+            <span>Marks your scratch draft for structure, evidence, and how to speak in the room</span>
+          </li>
+          <li>
             <strong>Mock loop</strong>
             <span>Five rooms in one sitting, then a private scorecard on this device</span>
           </li>

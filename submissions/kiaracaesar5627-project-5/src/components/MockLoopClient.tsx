@@ -2,8 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { InterviewRoundClient } from "@/components/LessonClient";
+import { InterviewRoundClient, AnswerReview } from "@/components/LessonClient";
 import { recordPractice, type SelfScore } from "@/lib/practice-journal";
+import { reviewResponse } from "@/lib/response-feedback";
 
 export type LoopRound = {
   slug: string;
@@ -127,6 +128,21 @@ export function MockLoopClient({
             </p>
           </div>
         </div>
+        <AnswerReview
+          feedback={reviewResponse({
+            notes: "",
+            playbook: [],
+            role,
+            stage: results.some((r) => r.stage === "Edge") ? "Edge" : "Core",
+            scores: {
+              structure: Math.round(avg.structure),
+              evidence: Math.round(avg.evidence),
+              clarity: Math.round(avg.clarity),
+            },
+            debriefCorrect:
+              avg.answered === 0 ? null : avg.correct === avg.answered,
+          })}
+        />
         <ul className="loop-recap">
           {results.map((r, i) => (
             <li key={r.slug}>

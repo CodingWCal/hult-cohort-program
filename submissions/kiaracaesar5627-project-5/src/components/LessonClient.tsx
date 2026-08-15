@@ -4,6 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import Link from "next/link";
 import { track } from "@/components/SessionHeartbeat";
 import { recordPractice, type SelfScore } from "@/lib/practice-journal";
+import { reviewResponse, type ResponseFeedback } from "@/lib/response-feedback";
 
 type Debrief = {
   prompt: string;
@@ -16,6 +17,41 @@ function formatClock(totalSeconds: number) {
   const m = Math.floor(totalSeconds / 60);
   const s = totalSeconds % 60;
   return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+export function AnswerReview({ feedback }: { feedback: ResponseFeedback }) {
+  return (
+    <aside className="answer-review" aria-live="polite">
+      <p className="eyebrow">Answer review</p>
+      <p className="review-headline">{feedback.headline}</p>
+      {feedback.strengths.length ? (
+        <div>
+          <p className="meta">What is working</p>
+          <ul>
+            {feedback.strengths.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      <div>
+        <p className="meta">How to improve this response</p>
+        <ul>
+          {feedback.improvements.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p className="meta">Tips for the real interview</p>
+        <ul>
+          {feedback.interviewTips.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  );
 }
 
 function ScoreRow({
@@ -105,6 +141,7 @@ export function InterviewRoundClient({
   const [speakMode, setSpeakMode] = useState(false);
   const [scores, setScores] = useState<SelfScore>({ structure: 0, evidence: 0, clarity: 0 });
   const [hint, setHint] = useState("");
+  const [coaching, setCoaching] = useState<ResponseFeedback | null>(null);
 
   useEffect(() => {
     if (!canTrack) return;
@@ -122,6 +159,7 @@ export function InterviewRoundClient({
     setSpeakMode(false);
     setScores({ structure: 0, evidence: 0, clarity: 0 });
     setHint("");
+    setCoaching(null);
   }, [lessonId, budget]);
 
   useEffect(() => {
@@ -178,6 +216,20 @@ export function InterviewRoundClient({
     });
   }
 
+  function runReview(scored?: SelfScore) {
+    const next = reviewResponse({
+      notes,
+      playbook,
+      role,
+      stage,
+      scores: scored ?? scores,
+      debriefCorrect: submitted ? choice === debrief.answerIndex : null,
+    });
+    setCoaching(next);
+    setHint("Answer review ready");
+    return next;
+  }
+
   function endRound() {
     const scored =
       scores.structure > 0 && scores.evidence > 0 && scores.clarity > 0
@@ -203,6 +255,7 @@ export function InterviewRoundClient({
         debriefCorrect: submitted ? choice === debrief.answerIndex : null,
         scores: scored,
       });
+      runReview(scored);
       setDone(true);
       setTimerOn(false);
       setSpeakMode(false);
@@ -297,11 +350,27 @@ export function InterviewRoundClient({
             <span className="meta">Scratch answer (stays on this device)</span>
             <textarea
               value={notes}
-              onChange={(e) => setNotes(e.target.value)}
+              onChange={(e) => {
+                setNotes(e.target.value);
+                setCoaching(null);
+              }}
               rows={speakMode ? 3 : 6}
               placeholder="STAR beats, case structure, or key numbers before you speak…"
             />
           </label>
+          <div className="review-actions">
+            <button
+              type="button"
+              className="btn compact primary"
+              onClick={() => runReview()}
+            >
+              Review my answer
+            </button>
+            <p className="meta">
+              Local checklist — marks your draft, not a model rewrite.
+            </p>
+          </div>
+          {coaching ? <AnswerReview feedback={coaching} /> : null}
 
           <div className="lesson-body">
             <div className="playbook-toggle-row">

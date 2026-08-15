@@ -348,7 +348,7 @@ a {
 
 @media (min-width: 720px) {
   .how-steps {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -492,6 +492,41 @@ a {
   font: inherit;
   line-height: 1.5;
   color: var(--ink);
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+}
+
+.answer-review {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem 1.15rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--panel) 92%, white);
+  display: grid;
+  gap: 0.85rem;
+}
+
+.review-headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.answer-review ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.answer-review li + li {
+  margin-top: 0.35rem;
 }
 
 .playbook-toggle-row {
