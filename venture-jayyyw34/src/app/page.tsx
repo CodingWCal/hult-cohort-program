@@ -25,7 +25,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-[var(--muted)]">
             LocalPlate is the wrap paper for homemade food: doubles in St. James,
-            roti in San Fernando, crab and dumpling in Scarborough. Cooks post
+            roti in Couva, crab and dumpling in Scarborough. Cooks post
             today’s pot. Neighbours reserve pickup — no delivery app in the
             middle.
           </p>

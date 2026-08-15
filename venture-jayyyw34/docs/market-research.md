@@ -22,7 +22,7 @@ Figures are public-order-of-magnitude, not a commissioned TAM study.
 
 - **TAM (desk):** People in Trinidad and Tobago paying someone else to cook — restaurants, street food, and homemade pots sold socially. LocalPlate is not chasing all restaurant GMV. Treat this as a ceiling, not a commissioned TAM study.
 - **SAM (desk):** Informal homemade supply in Trinidad and Tobago plus buyers already hunting it on WhatsApp and Instagram. Food-handler and public-health rules vary; verify before onboarding a cook.
-- **SOM (pilot assumption):** Towns listed in the product (Port of Spain, St. James, Woodbrook, San Juan, Tunapuna, St. Augustine, Arima, Chaguanas, San Fernando, Diego Martin, Maracas, Scarborough, Crown Point). Year-1 model in the business plan (~40 cooks) is an **assumption**, not a forecast from signed cooks.
+- **SOM (pilot assumption):** Towns listed in the product, including Couva, Penal, Point Fortin, Sangre Grande, Mayaro, and the original corridor / POS / San Fernando / Tobago set. Year-1 model in the business plan (~40 cooks) is an **assumption**, not a forecast from signed cooks.
 
 Delivery-app take rates of roughly 15–30% are widely reported in restaurant-operator coverage of DoorDash and Uber Eats. That is the fee pressure LocalPlate is not trying to copy for six-plate menus.
 

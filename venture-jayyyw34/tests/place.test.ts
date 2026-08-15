@@ -15,7 +15,11 @@ describe("place + collect + visual", () => {
   it("maps Scarborough to Tobago and POS to Trinidad", () => {
     assert.equal(islandForTown("Scarborough"), "tobago");
     assert.equal(islandForTown("Port of Spain"), "trinidad");
+    assert.equal(islandForTown("Couva"), "trinidad");
     assert.ok(townsForIsland("tobago").includes("Crown Point"));
+    assert.ok(townsForIsland("trinidad").includes("Couva"));
+    assert.ok(townsForIsland("trinidad").includes("Point Fortin"));
+    assert.ok(townsForIsland("trinidad").includes("Sangre Grande"));
   });
 
   it("parses mixed am/pm pickup windows", () => {
