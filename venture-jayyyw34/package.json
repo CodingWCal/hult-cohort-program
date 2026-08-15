@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test tests/qualify.test.ts tests/validate.test.ts"
+    "test": "tsx --test tests/qualify.test.ts tests/validate.test.ts tests/place.test.ts"
   },
   "dependencies": {
     "next": "16.3.1",

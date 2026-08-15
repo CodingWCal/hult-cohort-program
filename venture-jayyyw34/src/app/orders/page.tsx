@@ -41,9 +41,12 @@ export default function OrdersPage() {
         {orders.map((order) => (
           <article
             key={order.id}
-            className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5"
+            className="rounded-2xl wrap-card p-5"
           >
             <h2 className="font-serif text-2xl">{order.listingTitle}</h2>
+            <p className="mt-3 font-serif text-xl">
+              {order.collectCode || "Plate reserved"}
+            </p>
             <p className="mt-2 text-sm text-[var(--muted)]">
               {order.qty} serving(s) from {order.cookName} · {order.status} ·{" "}
               {new Date(order.createdAt).toLocaleString()}

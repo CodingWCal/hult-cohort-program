@@ -3,17 +3,21 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { readSession } from "@/lib/session";
-import { NEIGHBORHOODS, type Account, type Listing } from "@/lib/types";
+import { islandForTown, townsForIsland } from "@/lib/place";
+import { NEIGHBORHOODS, type Account, type Island, type Listing, type Pepper } from "@/lib/types";
 
 export default function CookPage() {
   const [account, setAccount] = useState<Account | null>(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("14");
+  const [price, setPrice] = useState("40");
   const [servings, setServings] = useState("6");
   const [neighborhood, setNeighborhood] = useState<string>(NEIGHBORHOODS[0]);
+  const [island, setIsland] = useState<Island>("trinidad");
   const [pickupWindow, setPickupWindow] = useState("5:30–7:30pm");
   const [tags, setTags] = useState("lunch");
+  const [pepper, setPepper] = useState<Pepper>("slight");
+  const [cookLine, setCookLine] = useState("");
   const [error, setError] = useState("");
   const [saved, setSaved] = useState<Listing | null>(null);
   const [pending, setPending] = useState(false);
@@ -21,7 +25,10 @@ export default function CookPage() {
   useEffect(() => {
     const session = readSession();
     setAccount(session);
-    if (session?.neighborhood) setNeighborhood(session.neighborhood);
+    if (session?.neighborhood) {
+      setNeighborhood(session.neighborhood);
+      setIsland(islandForTown(session.neighborhood));
+    }
   }, []);
 
   if (!account) {
@@ -43,7 +50,7 @@ export default function CookPage() {
       <div className="mx-auto max-w-lg px-4 py-16">
         <h1 className="font-serif text-4xl">Switch to cook</h1>
         <p className="mt-3 text-[var(--muted)]">
-          You’re signed in as a neighbor. Join again with the cook role to post a
+          You’re signed in as a neighbour. Join again with the cook role to post a
           dish.
         </p>
         <Link href="/join" className="mt-6 inline-block text-[var(--clay)]">
@@ -71,6 +78,8 @@ export default function CookPage() {
         servingsLeft: Number(servings),
         neighborhood,
         pickupWindow,
+        pepper,
+        cookLine,
         tags: tags
           .split(",")
           .map((tag) => tag.trim())
@@ -96,7 +105,7 @@ export default function CookPage() {
       </p>
       <form
         onSubmit={onSubmit}
-        className="mt-8 space-y-4 rounded-3xl border border-[var(--line)] bg-[var(--card)] p-6"
+        className="wrap-card mt-8 space-y-4 rounded-3xl p-6"
       >
         <label className="block text-sm">
           Dish
@@ -143,15 +152,52 @@ export default function CookPage() {
           </label>
         </div>
         <label className="block text-sm">
+          One-line cook story
+          <input
+            className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
+            value={cookLine}
+            onChange={(event) => setCookLine(event.target.value)}
+            placeholder="St. James, wrapping since savannah days"
+          />
+        </label>
+        <label className="block text-sm">
+          Island
+          <select
+            className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
+            value={island}
+            onChange={(event) => {
+              const next = event.target.value as Island;
+              setIsland(next);
+              setNeighborhood(townsForIsland(next)[0]);
+            }}
+          >
+            <option value="trinidad">Trinidad</option>
+            <option value="tobago">Tobago</option>
+          </select>
+        </label>
+        <label className="block text-sm">
           Town / area
           <select
             className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
             value={neighborhood}
             onChange={(event) => setNeighborhood(event.target.value)}
           >
-            {NEIGHBORHOODS.map((item) => (
+            {townsForIsland(island).map((item) => (
               <option key={item}>{item}</option>
             ))}
+          </select>
+        </label>
+        <label className="block text-sm">
+          Pepper
+          <select
+            className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
+            value={pepper}
+            onChange={(event) => setPepper(event.target.value as Pepper)}
+          >
+            <option value="slight">Slight</option>
+            <option value="slight-plus">Slight-plus</option>
+            <option value="plenty">Plenty</option>
+            <option value="none">No pepper</option>
           </select>
         </label>
         <label className="block text-sm">

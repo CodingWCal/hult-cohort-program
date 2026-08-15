@@ -6,9 +6,9 @@ export default function InvestorsPage() {
       <p className="text-xs uppercase tracking-[0.16em] text-[var(--sage)]">One-pager</p>
       <h1 className="mt-2 font-serif text-5xl">LocalPlate</h1>
       <p className="mt-4 text-xl text-[var(--muted)]">
-        A Trinidad & Tobago micro-marketplace for homemade plates — doubles,
-        roti, pelau, crab and dumpling. Cooks list today’s pot; neighbours
-        reserve pickup in town.
+        A Trinidad & Tobago wrap-paper marketplace — doubles, roti, pelau, crab
+        and dumpling. Cooks list today’s pot; neighbours reserve pickup by island
+        and town.
       </p>
       <dl className="mt-8 grid gap-5 text-sm md:grid-cols-2">
         <div>
@@ -21,8 +21,8 @@ export default function InvestorsPage() {
         <div>
           <dt className="text-[var(--muted)]">Wedge</dt>
           <dd className="mt-1">
-            Daily menus + town pickup from Port of Spain to Crown Point. Not a
-            ghost-kitchen OS and not a 30% delivery take-rate.
+            Daily menus + Trinidad | Tobago pickup. Not a ghost-kitchen OS and not
+            a 30% delivery take-rate. WhatsApp remains the share button.
           </dd>
         </div>
         <div>

@@ -13,10 +13,16 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="border-b border-[var(--line)] bg-[var(--paper)]/90 backdrop-blur">
+    <header className="bg-[var(--paper)]/90 backdrop-blur">
+      <div className="flag-rule" />
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-        <Link href="/" className="font-serif text-2xl tracking-tight text-[var(--ink)]">
-          LocalPlate
+        <Link href="/" className="leading-tight">
+          <span className="block font-serif text-2xl tracking-tight text-[var(--ink)]">
+            LocalPlate
+          </span>
+          <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--clay)]">
+            Today’s Pot
+          </span>
         </Link>
         <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
           <Link href="/browse" className="hover:text-[var(--clay)]">

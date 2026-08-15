@@ -21,12 +21,16 @@ export function validateAccountInput(input: {
     return "A valid email is required.";
   }
   if (!input.role || !isRole(input.role)) {
-    return "Choose cook or neighbor.";
+    return "Choose cook or neighbour.";
   }
   if (!input.neighborhood || !isNeighborhood(input.neighborhood)) {
     return "Choose a town or area.";
   }
   return null;
+}
+
+export function isPepper(value: string): boolean {
+  return value === "slight" || value === "slight-plus" || value === "plenty" || value === "none";
 }
 
 export function validateListingInput(input: {
@@ -36,6 +40,7 @@ export function validateListingInput(input: {
   servingsLeft?: number;
   neighborhood?: string;
   pickupWindow?: string;
+  pepper?: string;
 }): string | null {
   if (!input.title?.trim() || input.title.trim().length < 3) {
     return "Dish title is required.";
@@ -44,7 +49,7 @@ export function validateListingInput(input: {
     return "Add a short description (10+ characters).";
   }
   if (!Number.isFinite(input.priceCents) || (input.priceCents ?? 0) < 100) {
-    return "Price must be at least $1.00.";
+    return "Price must be at least TT$1.00.";
   }
   if (!Number.isFinite(input.servingsLeft) || (input.servingsLeft ?? 0) < 1) {
     return "List at least one serving.";
@@ -54,6 +59,9 @@ export function validateListingInput(input: {
   }
   if (!input.pickupWindow?.trim()) {
     return "Add a pickup window.";
+  }
+  if (input.pepper && !isPepper(input.pepper)) {
+    return "Choose a pepper level.";
   }
   return null;
 }

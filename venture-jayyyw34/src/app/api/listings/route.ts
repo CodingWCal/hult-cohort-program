@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { id, todayISO } from "@/lib/format";
+import { daypartFromWindow, islandForTown } from "@/lib/place";
 import { addEvent, addListing, getDb } from "@/lib/store";
 import { validateListingInput } from "@/lib/validate";
-import type { Listing } from "@/lib/types";
+import { visualFromTitle } from "@/lib/visual";
+import type { Listing, Pepper } from "@/lib/types";
 
 export function GET() {
   return NextResponse.json({ ok: true, listings: getDb().listings });
@@ -20,6 +22,7 @@ export async function POST(request: Request) {
     servingsLeft: body.servingsLeft,
     neighborhood: body.neighborhood,
     pickupWindow: body.pickupWindow,
+    pepper: body.pepper,
   });
   if (error) return NextResponse.json({ ok: false, error }, { status: 400 });
   if (!body.cookId || !body.cookName) {
@@ -30,12 +33,17 @@ export async function POST(request: Request) {
     id: id("dish"),
     cookId: body.cookId,
     cookName: body.cookName,
+    cookLine: (body.cookLine || "").trim().slice(0, 80) || undefined,
     neighborhood: body.neighborhood!,
+    island: islandForTown(body.neighborhood!),
     title: body.title!.trim(),
     description: body.description!.trim(),
     priceCents: Number(body.priceCents),
     servingsLeft: Number(body.servingsLeft),
     tags: Array.isArray(body.tags) ? body.tags.slice(0, 6) : [],
+    pepper: (body.pepper as Pepper) || "slight",
+    daypart: daypartFromWindow(body.pickupWindow!.trim()),
+    visual: visualFromTitle(body.title!.trim()),
     availableDate: body.availableDate || todayISO(),
     pickupWindow: body.pickupWindow!.trim(),
   };

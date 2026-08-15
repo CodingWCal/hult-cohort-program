@@ -5,7 +5,8 @@ Print the live deck at `/investors/deck` to PDF if a reviewer wants a file. Slid
 1. **Title** — LocalPlate. Tonight’s pelau, from a kitchen on your street.
 2. **Problem** — Homemade sales are stuck in WhatsApp. Delivery apps are built for restaurants.
 3. **Solution** — Daily menus, remaining servings, town pickup across Trinidad & Tobago.
-4. **Product** — Browse, join, list, reserve, privacy, metrics.
+3b. **WhatsApp** — Homemade food already runs on WhatsApp. LocalPlate is the missing public inventory, then shares back into the chat.
+4. **Product** — Browse, join, list, reserve, pepper, collect code, privacy, metrics.
 5. **Market** — Informal homemade supply in T&T (WhatsApp cooks, Saturday bake, Sunday lunch).
 6. **Competition** — Local delivery apps, restaurant aggregators, Instagram/WhatsApp. Wedge is same-day town inventory.
 7. **Model** — 12–15% take rate after payments. No courier payroll. MVP does not charge cards.

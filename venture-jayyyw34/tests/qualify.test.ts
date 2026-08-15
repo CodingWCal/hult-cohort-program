@@ -52,6 +52,8 @@ describe("qualify", () => {
       buyerName: neighbor.name,
       qty: 1,
       note: "",
+      pepper: "slight",
+      collectCode: "Tell Ada: plate ORD1",
       createdAt: "2026-08-14T00:00:00.000Z",
       status: "placed",
     };

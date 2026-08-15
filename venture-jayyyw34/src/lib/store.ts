@@ -1,8 +1,10 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { id } from "./format";
+import { daypartFromWindow, islandForTown } from "./place";
 import { seedListings } from "./seed";
 import type { Account, ErrorRecord, Listing, Order, PlatformEvent } from "./types";
+import { visualFromTitle } from "./visual";
 
 type Db = {
   accounts: Account[];
@@ -17,6 +19,16 @@ const FILE =
   (process.env.VERCEL ? "/tmp/localplate.json" : ".data/localplate.json");
 
 let memory: Db | null = null;
+
+function normalizeListing(row: Listing): Listing {
+  return {
+    ...row,
+    island: row.island || islandForTown(row.neighborhood),
+    pepper: row.pepper || "slight",
+    daypart: row.daypart || daypartFromWindow(row.pickupWindow),
+    visual: row.visual || visualFromTitle(row.title),
+  };
+}
 
 function emptyDb(): Db {
   return {
@@ -33,7 +45,9 @@ function load(): Db {
   try {
     const raw = readFileSync(FILE, "utf8");
     const parsed = JSON.parse(raw) as Db;
-    const custom = (parsed.listings || []).filter((row) => !row.seeded);
+    const custom = (parsed.listings || [])
+      .filter((row) => !row.seeded)
+      .map(normalizeListing);
     parsed.listings = [...custom, ...seedListings()];
     memory = parsed;
     return memory;

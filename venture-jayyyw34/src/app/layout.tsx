@@ -16,7 +16,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "LocalPlate — homemade meals from your block",
+  title: "LocalPlate — Today’s Pot",
   description:
     "A Trinidad & Tobago micro-marketplace for homemade plates — doubles, roti, pelau, crab and dumpling — reserved for pickup in your town.",
 };

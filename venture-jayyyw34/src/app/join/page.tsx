@@ -1,16 +1,19 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { writeSession } from "@/lib/session";
-import { NEIGHBORHOODS, type Account, type Role } from "@/lib/types";
+import { townsForIsland } from "@/lib/place";
+import { type Account, type Island, type Role } from "@/lib/types";
 
 export default function JoinPage() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState<Role>("neighbor");
-  const [neighborhood, setNeighborhood] = useState<string>(NEIGHBORHOODS[0]);
+  const [island, setIsland] = useState<Island>("trinidad");
+  const towns = useMemo(() => townsForIsland(island), [island]);
+  const [neighborhood, setNeighborhood] = useState<string>(towns[0]);
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
 
@@ -35,12 +38,12 @@ export default function JoinPage() {
 
   return (
     <div className="mx-auto max-w-lg px-4 py-14">
-      <h1 className="font-serif text-4xl">Join LocalPlate</h1>
+      <h1 className="font-serif text-4xl">Join Today’s Pot</h1>
       <p className="mt-3 text-[var(--muted)]">
-        MVP accounts are just a name, email, role, and town — no password
-        flow. Use a real email so reviewers can tell users apart.
+        Name, email, role, and town — no password. Use a real email so reviewers
+        can tell users apart.
       </p>
-      <form onSubmit={onSubmit} className="mt-8 space-y-4 rounded-3xl border border-[var(--line)] bg-[var(--card)] p-6">
+      <form onSubmit={onSubmit} className="wrap-card mt-8 space-y-4 rounded-3xl p-6">
         <label className="block text-sm">
           Name
           <input
@@ -67,8 +70,23 @@ export default function JoinPage() {
             value={role}
             onChange={(event) => setRole(event.target.value as Role)}
           >
-            <option value="neighbor">Neighbor (I want to order)</option>
+            <option value="neighbor">Neighbour (I want to order)</option>
             <option value="cook">Home cook / baker (I want to list)</option>
+          </select>
+        </label>
+        <label className="block text-sm">
+          Island
+          <select
+            className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
+            value={island}
+            onChange={(event) => {
+              const next = event.target.value as Island;
+              setIsland(next);
+              setNeighborhood(townsForIsland(next)[0]);
+            }}
+          >
+            <option value="trinidad">Trinidad</option>
+            <option value="tobago">Tobago</option>
           </select>
         </label>
         <label className="block text-sm">
@@ -78,7 +96,7 @@ export default function JoinPage() {
             value={neighborhood}
             onChange={(event) => setNeighborhood(event.target.value)}
           >
-            {NEIGHBORHOODS.map((item) => (
+            {towns.map((item) => (
               <option key={item}>{item}</option>
             ))}
           </select>

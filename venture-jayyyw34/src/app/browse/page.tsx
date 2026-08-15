@@ -2,13 +2,15 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { DishCard } from "@/components/DishCard";
+import { DAYPARTS, NEIGHBORHOODS, type Daypart, type Island, type Listing } from "@/lib/types";
+import { islandOf, isOnNow, townsForIsland } from "@/lib/place";
 import { readSession } from "@/lib/session";
-import { NEIGHBORHOODS, type Listing } from "@/lib/types";
 
 export default function BrowsePage() {
   const [listings, setListings] = useState<Listing[]>([]);
+  const [island, setIsland] = useState<Island | "all">("all");
   const [neighborhood, setNeighborhood] = useState("all");
-  const [tag, setTag] = useState("all");
+  const [daypart, setDaypart] = useState<Daypart | "all" | "now">("all");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -30,43 +32,72 @@ export default function BrowsePage() {
     }
   }, []);
 
-  const tags = useMemo(() => {
-    return Array.from(new Set(listings.flatMap((listing) => listing.tags))).sort();
-  }, [listings]);
+  const towns = island === "all" ? NEIGHBORHOODS : townsForIsland(island);
 
-  const filtered = listings.filter((listing) => {
-    if (neighborhood !== "all" && listing.neighborhood !== neighborhood) return false;
-    if (tag !== "all" && !listing.tags.includes(tag)) return false;
-    return true;
-  });
+  const filtered = useMemo(() => {
+    return listings.filter((listing) => {
+      if (island !== "all" && islandOf(listing) !== island) return false;
+      if (neighborhood !== "all" && listing.neighborhood !== neighborhood) return false;
+      if (daypart === "now") return isOnNow(listing);
+      if (daypart !== "all" && listing.daypart !== daypart) return false;
+      return true;
+    });
+  }, [listings, island, neighborhood, daypart]);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="font-serif text-4xl">Tonight’s menus</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
-        Filter by Trinidad & Tobago town or dish type. Seeded kitchens are
-        examples so the board is never empty; anything you list as a cook
-        appears here too.
+        Trinidad or Tobago, then town and daypart. Seeded kitchens keep the wrap
+        full; anything you list as a cook appears here too.
       </p>
-      <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-6 flex flex-wrap gap-2">
+        {(
+          [
+            ["all", "Both islands"],
+            ["trinidad", "Trinidad"],
+            ["tobago", "Tobago"],
+          ] as const
+        ).map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            onClick={() => {
+              setIsland(id);
+              setNeighborhood("all");
+            }}
+            className={`rounded-full px-4 py-1.5 text-sm ${
+              island === id
+                ? "bg-[var(--ink)] text-[var(--paper)]"
+                : "border border-[var(--line)] bg-[var(--card)]"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="mt-4 flex flex-wrap gap-3">
         <select
           className="rounded-full border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
           value={neighborhood}
           onChange={(event) => setNeighborhood(event.target.value)}
         >
           <option value="all">All towns</option>
-          {NEIGHBORHOODS.map((name) => (
+          {towns.map((name) => (
             <option key={name}>{name}</option>
           ))}
         </select>
         <select
           className="rounded-full border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
-          value={tag}
-          onChange={(event) => setTag(event.target.value)}
+          value={daypart}
+          onChange={(event) => setDaypart(event.target.value as Daypart | "all" | "now")}
         >
-          <option value="all">All dishes</option>
-          {tags.map((name) => (
-            <option key={name}>{name}</option>
+          <option value="all">All dayparts</option>
+          <option value="now">On the fire now</option>
+          {DAYPARTS.map((part) => (
+            <option key={part.id} value={part.id}>
+              {part.label}
+            </option>
           ))}
         </select>
       </div>
