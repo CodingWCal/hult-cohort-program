@@ -52,14 +52,19 @@ export type ErrorRecord = {
 };
 
 export const NEIGHBORHOODS = [
-  "Cambridge",
-  "Somerville",
-  "Allston",
-  "Brookline",
-  "Jamaica Plain",
-  "Fenway",
-  "South End",
-  "Medford",
+  "Port of Spain",
+  "St. James",
+  "Woodbrook",
+  "San Juan",
+  "Tunapuna",
+  "St. Augustine",
+  "Arima",
+  "Chaguanas",
+  "San Fernando",
+  "Diego Martin",
+  "Maracas",
+  "Scarborough",
+  "Crown Point",
 ] as const;
 
 export type Neighborhood = (typeof NEIGHBORHOODS)[number];

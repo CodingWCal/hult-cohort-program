@@ -24,7 +24,7 @@ export function validateAccountInput(input: {
     return "Choose cook or neighbor.";
   }
   if (!input.neighborhood || !isNeighborhood(input.neighborhood)) {
-    return "Choose a neighborhood.";
+    return "Choose a town or area.";
   }
   return null;
 }
@@ -50,7 +50,7 @@ export function validateListingInput(input: {
     return "List at least one serving.";
   }
   if (!input.neighborhood || !isNeighborhood(input.neighborhood)) {
-    return "Choose a neighborhood.";
+    return "Choose a town or area.";
   }
   if (!input.pickupWindow?.trim()) {
     return "Add a pickup window.";

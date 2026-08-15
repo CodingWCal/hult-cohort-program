@@ -1,6 +1,6 @@
 # LocalPlate
 
-Neighborhood micro-marketplace: home cooks and bakers list a daily menu; neighbors reserve plates for pickup.
+Trinidad & Tobago micro-marketplace: home cooks list doubles, roti, pelau, and Sunday lunch; neighbours reserve pickup by town.
 
 **Founder:** jayyyw34 · Hult Cohort Summer Pilot 2026 · Week 5 venture
 
@@ -39,7 +39,8 @@ Open http://localhost:3000 — browse menus, join (name + email + role), list a 
 
 ## Notes
 
-- Seeded Greater Boston kitchens keep the board from being empty. They are demo listings, not claimed live vendors.
+- Seeded Trinidad & Tobago kitchens (St. James, Maracas, San Fernando, Scarborough, and more) keep the board from being empty. They are demo listings, not claimed live vendors.
+- Prices display in TT dollars.
 - Accounts are email + name + role. No password flow (founder MVP preference).
 - Serverless persistence uses a temporary JSON store and can reset. Do not put secrets in the forms.
 - Metrics exclude user ids/emails containing `jayyyw34`.

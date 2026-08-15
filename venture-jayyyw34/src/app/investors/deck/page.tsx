@@ -2,12 +2,12 @@ const slides = [
   {
     kicker: "01 · Title",
     title: "LocalPlate",
-    body: "Tonight’s dinner, from a kitchen on your block. A micro-marketplace connecting home cooks and bakers with neighborhood buyers.",
+    body: "Tonight’s pelau, from a kitchen on your street. A Trinidad & Tobago micro-marketplace connecting home cooks with neighbours who want doubles, roti, and Sunday lunch.",
   },
   {
     kicker: "02 · Problem",
     title: "The homemade economy is stuck in DMs.",
-    body: "Cooks already sell extra trays through Instagram, WhatsApp, and Nextdoor. Buyers cannot browse what’s actually available tonight. National delivery apps optimize for chains and 25–30% take rates, not a six-plate home menu.",
+    body: "Cooks already sell extra trays through WhatsApp status and Instagram DMs. Buyers cannot browse what’s actually on the fire tonight. Delivery apps optimize for restaurants, not a ten-plate pelau pot.",
   },
   {
     kicker: "03 · Solution",
@@ -17,17 +17,17 @@ const slides = [
   {
     kicker: "04 · Product",
     title: "What shipped in this pilot",
-    body: "Browse tonight’s boards, join as cook or neighbor (no password maze), list a dish, reserve a plate, privacy + metrics + error logging. Seeded Greater Boston kitchens keep the board alive for first-time visitors.",
+    body: "Browse tonight’s boards, join as cook or neighbour (no password maze), list a dish, reserve a plate, privacy + metrics + error logging. Seeded Trinidad & Tobago kitchens — St. James doubles to Scarborough crab and dumpling — keep the board alive.",
   },
   {
     kicker: "05 · Market",
     title: "Food away from home is huge. Our wedge is small on purpose.",
-    body: "USDA ERS tracks well over $1T in food-away-from-home spending. Delivery incumbents already tax that flow. LocalPlate’s SAM is informal / cottage / shared-kitchen supply in one metro — starting with Greater Boston — not a claim on all restaurant GMV.",
+    body: "Food away from home is a large spend in every market. LocalPlate’s SAM is informal homemade supply in Trinidad and Tobago — WhatsApp cooks, Saturday bake, Sunday lunch — not a claim on all restaurant GMV.",
   },
   {
     kicker: "06 · Competition",
     title: "We are not DoorDash with a gingham filter.",
-    body: "DoorDash / Uber Eats: logistics + chain menus. Shef / similar: nationwide personal-chef marketplaces with heavier compliance. Facebook/Nextdoor: demand exists, no inventory, no trust layer. LocalPlate: same-day neighborhood inventory.",
+    body: "Local delivery apps and restaurant aggregators: logistics + restaurant menus. WhatsApp / Instagram: where demand already lives, no inventory. LocalPlate: same-day town inventory for Trini and Tobago homemade food.",
   },
   {
     kicker: "07 · Model",
@@ -42,7 +42,7 @@ const slides = [
   {
     kicker: "09 · GTM",
     title: "One metro. Cook-led density.",
-    body: "Onboard 20 cooks in 3–4 adjacent neighborhoods before spending on buyer ads. Church/group-chat cooks and bakery cottage operators first. Buyers come from the cook’s existing circle, then the public board.",
+    body: "Onboard 20 cooks across Port of Spain, the East–West Corridor, San Fernando, and Tobago before spending on buyer ads. Church, fete, and WhatsApp cooks first. Buyers come from the cook’s existing circle, then the public board.",
   },
   {
     kicker: "10 · Team",
@@ -52,12 +52,12 @@ const slides = [
   {
     kicker: "11 · Risks",
     title: "Food law is the real boss.",
-    body: "Cottage-food statutes often allow baked goods and block full meals. LocalPlate’s path is permitted items + licensed shared kitchens + clear cook attestations. Insurance and foodborne-illness liability are first-class risks, not footnotes.",
+    body: "T&T public-health and food-handler rules apply. LocalPlate’s path is permitted home operators + licensed kitchens + clear cook attestations. Insurance and foodborne-illness liability are first-class risks, not footnotes.",
   },
   {
     kicker: "12 · Ask",
     title: "A conversation, not a fake priced round.",
-    body: "Looking for one qualified investor or food-tech angel conversation: feedback on the Boston wedge, introductions to shared-kitchen operators, and whether a pre-seed check is even the right instrument. Deck lives in-repo and at /investors/deck.",
+    body: "Looking for one qualified investor or food-tech angel conversation: feedback on the Trinidad & Tobago wedge, introductions to licensed kitchens, and whether a pre-seed check is even the right instrument. Deck lives in-repo and at /investors/deck.",
   },
 ];
 

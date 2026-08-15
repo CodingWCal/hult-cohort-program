@@ -11,7 +11,7 @@
 
 LocalPlate is a same-day marketplace where home cooks and bakers list a short daily menu and neighbors reserve plates for pickup on the block. The product is not a national delivery network and not a ghost-kitchen operating system. It is a thin coordination layer on top of cooking that already happens in apartments and side-street kitchens.
 
-The informal homemade channel already exists in Instagram DMs, WhatsApp groups, and Nextdoor posts. That channel has demand and almost no inventory, payments, or neighborhood browse. Delivery incumbents (DoorDash, Uber Eats) take 15–30% and optimize for restaurants that can absorb fees and courier coverage. LocalPlate’s first metro is Greater Boston. The revenue model, once payments exist, is a 12–15% fee on reserved plates plus optional featured placement. This MVP ships browse, join, list, order, privacy, and a public metrics snapshot. It does not process cards and does not claim a priced financing round.
+The informal homemade channel already exists in WhatsApp status, Instagram DMs, and Facebook groups across Trinidad and Tobago. That channel has demand and almost no inventory, payments, or town-level browse. Delivery apps optimize for restaurants that can absorb fees. LocalPlate’s first market is Trinidad and Tobago — Port of Spain, the East–West Corridor, San Fernando, and Tobago. The revenue model, once payments exist, is a 12–15% fee on reserved plates plus optional featured placement. This MVP ships browse, join, list, order, privacy, and a public metrics snapshot. It does not process cards and does not claim a priced financing round.
 
 ---
 
@@ -37,7 +37,7 @@ See `docs/market-research.md` for TAM/SAM/SOM, sources, and the interview status
 |--------|----------|------------------------|
 | DoorDash / Uber Eats | Demand density, payments, logistics | High take rate; built for restaurants, not six-plate menus |
 | Shef and similar | Homemade brand, some compliance | National, heavier onboarding; less “tonight on your block” |
-| Instagram / WhatsApp / Nextdoor | Where demand already lives | No inventory, no remaining-servings, no neighborhood browse |
+| Instagram / WhatsApp / Facebook | Where demand already lives | No inventory, no remaining-servings, no town browse |
 | Meal-kit / ghost kitchen OS | Ops software | Wrong customer; not a neighborhood plate board |
 
 **Wedge:** same-day neighborhood inventory + pickup. Win the three-block radius before pretending to be a logistics company.
@@ -50,7 +50,7 @@ See `docs/market-research.md` for TAM/SAM/SOM, sources, and the interview status
 |------|----------------------|
 | Take rate | 12–15% of reservation GMV once payments exist |
 | Featured cook | $15–40 / week in a neighborhood (optional) |
-| Average plate | $12–18 (seed menu sits in this band) |
+| Average plate | TT$25–65 (seed menu sits in this band) |
 | Cook payout | 85–88% of plate price |
 | Payments in MVP | None. Reservations only. |
 
@@ -60,9 +60,9 @@ No courier payroll. Gross margin, at software scale, should look like a marketpl
 
 ## Go-to-market
 
-1. **Density before ads.** Twenty cooks in 3–4 adjacent neighborhoods (Cambridge / Somerville / Allston / Brookline) before paid buyer acquisition.
+1. **Density before ads.** Twenty cooks across Port of Spain / St. James / Tunapuna / San Fernando / Scarborough before paid buyer acquisition.
 2. **Cook-led demand.** First buyers are the cook’s existing group chat. The public board is the second surface.
-3. **Cottage + shared kitchen.** Lead with operators who already bake under cottage-food rules or rent a licensed kitchen. Do not onboard unpermitted full-meal cooks as if the law were optional.
+3. **Permitted cooks + shared kitchen.** Lead with operators who already sell under food-handler rules or rent a licensed kitchen. Do not onboard unpermitted full-meal cooks as if the law were optional.
 4. **Campus / cohort adjacency.** Hult and nearby campuses are a distribution channel for the pilot, not the long-term ICP.
 
 ---
@@ -94,7 +94,7 @@ These numbers are a model, not a dashboard.
 | Q1 | Payments (Stripe), cook attestations, neighborhood waitlists |
 | Q2 | Shared-kitchen partner onboarding; allergy + ingredient fields |
 | Q3 | Ratings after pickup; no-show policy; SMS pickup reminders |
-| Q4 | Second metro only if Boston density is real (repeat-order proof) |
+| Q4 | Second island cluster only if T&T density is real (repeat-order proof) |
 
 Out of scope for the 12-month plan: courier fleet, nationwide SEO play, dark-kitchen financing.
 
@@ -129,7 +129,7 @@ Costs include hosting, payments fees, insurance quotes, and counsel. They do not
 
 ## Risks
 
-1. **Food law.** Many cottage-food statutes allow baked goods and prohibit meals that need refrigeration. Selling “homemade dinner” without a license is a legal risk. Mitigation: permitted SKUs first; shared commercial kitchens for meals; cook attestations; geo-fenced rules.
+1. **Food law.** T&T public-health and food-handler rules apply. Selling homemade meals without the right permit is a legal risk. Mitigation: permitted operators first; licensed kitchens for larger pots; cook attestations.
 2. **Liability.** Foodborne illness. Mitigation: insurance before paid GMV; clear cook-as-merchant language.
 3. **Trust / no-shows.** Mitigation: remaining-servings, later: deposits and ratings.
 4. **Incumbent copy.** Delivery apps can add “homemade” tabs. Mitigation: neighborhood density and cook relationships, not feature checklists.

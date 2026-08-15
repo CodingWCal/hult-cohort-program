@@ -2,12 +2,12 @@
 
 **Tonight’s dinner, from a kitchen on your block.**
 
-LocalPlate is a micro-marketplace. Home cooks and bakers post a daily menu. Neighbors browse by neighborhood and reserve a plate for pickup. No driver network.
+LocalPlate is a Trinidad & Tobago micro-marketplace. Home cooks post today’s pot — doubles, roti, pelau, crab and dumpling. Neighbours browse by town and reserve pickup. No driver network.
 
-- **Problem:** Homemade food already sells in DMs. There is no live local inventory.
-- **Wedge:** Same-day neighborhood boards, not national delivery.
+- **Problem:** Homemade food already sells in WhatsApp. There is no live local inventory.
+- **Wedge:** Same-day town boards from Port of Spain to Crown Point, not national delivery.
 - **Model:** 12–15% of reservations once payments exist. Featured cook slots later.
-- **Pilot:** Greater Boston neighborhoods in the product. Hult Week 5 production app.
+- **Pilot:** Trinidad & Tobago towns in the product. Hult Week 5 production app.
 - **Ask:** A qualified investor conversation (angel / food-tech). Log goes in `INVESTOR_LOG.md` when it happens — not invented.
 
 Product: browse menus → join (name, email, role) → list or reserve → pickup window.

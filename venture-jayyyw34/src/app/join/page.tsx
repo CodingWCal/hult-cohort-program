@@ -37,7 +37,7 @@ export default function JoinPage() {
     <div className="mx-auto max-w-lg px-4 py-14">
       <h1 className="font-serif text-4xl">Join LocalPlate</h1>
       <p className="mt-3 text-[var(--muted)]">
-        MVP accounts are just a name, email, role, and neighborhood — no password
+        MVP accounts are just a name, email, role, and town — no password
         flow. Use a real email so reviewers can tell users apart.
       </p>
       <form onSubmit={onSubmit} className="mt-8 space-y-4 rounded-3xl border border-[var(--line)] bg-[var(--card)] p-6">
@@ -72,7 +72,7 @@ export default function JoinPage() {
           </select>
         </label>
         <label className="block text-sm">
-          Neighborhood
+          Town / area
           <select
             className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
             value={neighborhood}

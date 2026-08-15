@@ -33,7 +33,8 @@ function load(): Db {
   try {
     const raw = readFileSync(FILE, "utf8");
     const parsed = JSON.parse(raw) as Db;
-    if (!parsed.listings?.length) parsed.listings = seedListings();
+    const custom = (parsed.listings || []).filter((row) => !row.seeded);
+    parsed.listings = [...custom, ...seedListings()];
     memory = parsed;
     return memory;
   } catch {

@@ -13,7 +13,7 @@ const neighbor: Account = {
   name: "Ada Neighbor",
   email: "ada@example.com",
   role: "neighbor",
-  neighborhood: "Cambridge",
+  neighborhood: "Port of Spain",
   createdAt: "2026-08-14T00:00:00.000Z",
 };
 
@@ -22,7 +22,7 @@ const founder: Account = {
   name: "Founder",
   email: "jayyyw34@example.com",
   role: "cook",
-  neighborhood: "Cambridge",
+  neighborhood: "Port of Spain",
   createdAt: "2026-08-14T00:00:00.000Z",
 };
 

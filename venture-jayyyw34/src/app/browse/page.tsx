@@ -44,8 +44,9 @@ export default function BrowsePage() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="font-serif text-4xl">Tonight’s menus</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
-        Filter by neighborhood or dish type. Seeded kitchens are examples so the
-        board is never empty; anything you list as a cook appears here too.
+        Filter by Trinidad & Tobago town or dish type. Seeded kitchens are
+        examples so the board is never empty; anything you list as a cook
+        appears here too.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <select
@@ -53,7 +54,7 @@ export default function BrowsePage() {
           value={neighborhood}
           onChange={(event) => setNeighborhood(event.target.value)}
         >
-          <option value="all">All neighborhoods</option>
+          <option value="all">All towns</option>
           {NEIGHBORHOODS.map((name) => (
             <option key={name}>{name}</option>
           ))}

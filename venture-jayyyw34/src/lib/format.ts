@@ -1,9 +1,6 @@
 export function formatPrice(cents: number): string {
-  if (!Number.isFinite(cents) || cents < 0) return "$0.00";
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  }).format(cents / 100);
+  if (!Number.isFinite(cents) || cents < 0) return "TT$0.00";
+  return `TT$${(cents / 100).toFixed(2)}`;
 }
 
 export function todayISO(): string {

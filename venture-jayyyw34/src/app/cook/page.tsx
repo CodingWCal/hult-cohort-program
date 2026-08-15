@@ -13,7 +13,7 @@ export default function CookPage() {
   const [servings, setServings] = useState("6");
   const [neighborhood, setNeighborhood] = useState<string>(NEIGHBORHOODS[0]);
   const [pickupWindow, setPickupWindow] = useState("5:30–7:30pm");
-  const [tags, setTags] = useState("dinner");
+  const [tags, setTags] = useState("lunch");
   const [error, setError] = useState("");
   const [saved, setSaved] = useState<Listing | null>(null);
   const [pending, setPending] = useState(false);
@@ -119,7 +119,7 @@ export default function CookPage() {
         </label>
         <div className="grid grid-cols-2 gap-3">
           <label className="block text-sm">
-            Price (USD)
+            Price (TTD)
             <input
               required
               type="number"
@@ -143,7 +143,7 @@ export default function CookPage() {
           </label>
         </div>
         <label className="block text-sm">
-          Neighborhood
+          Town / area
           <select
             className="mt-1 w-full rounded-xl border border-[var(--line)] px-3 py-2"
             value={neighborhood}

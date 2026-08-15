@@ -5,17 +5,17 @@ import { formatPrice } from "../src/lib/format";
 import type { Listing } from "../src/lib/types";
 
 const listing: Listing = {
-  id: "seed_jollof",
-  cookId: "seed_amara",
-  cookName: "Amara Cole",
-  neighborhood: "Cambridge",
-  title: "Jollof",
-  description: "Tomato-pepper jollof",
-  priceCents: 1600,
+  id: "seed_doubles",
+  cookId: "seed_kamla",
+  cookName: "Kamla Persad",
+  neighborhood: "St. James",
+  title: "Doubles",
+  description: "Bara and channa",
+  priceCents: 1200,
   servingsLeft: 2,
-  tags: ["dinner"],
+  tags: ["breakfast"],
   availableDate: "2026-08-14",
-  pickupWindow: "5:30–7:30pm",
+  pickupWindow: "6:30–10:00am",
 };
 
 describe("validate + format", () => {
@@ -24,19 +24,19 @@ describe("validate + format", () => {
       name: "Ada",
       email: "not-an-email",
       role: "neighbor",
-      neighborhood: "Cambridge",
+      neighborhood: "Port of Spain",
     });
     assert.ok(error);
   });
 
   it("accepts a complete cook listing", () => {
     const error = validateListingInput({
-      title: "Jollof rice",
-      description: "Tomato-pepper jollof with plantain.",
-      priceCents: 1600,
+      title: "Chicken pelau",
+      description: "Browned-sugar pelau with pigeon peas.",
+      priceCents: 4500,
       servingsLeft: 6,
-      neighborhood: "Cambridge",
-      pickupWindow: "5:30–7:30pm",
+      neighborhood: "Chaguanas",
+      pickupWindow: "12:00–6:00pm",
     });
     assert.equal(error, null);
   });
@@ -46,8 +46,8 @@ describe("validate + format", () => {
     assert.equal(canFulfill(listing, 2), null);
   });
 
-  it("formats cents as USD", () => {
-    assert.equal(formatPrice(1600), "$16.00");
-    assert.equal(formatPrice(-5), "$0.00");
+  it("formats cents as TTD", () => {
+    assert.equal(formatPrice(1600), "TT$16.00");
+    assert.equal(formatPrice(-5), "TT$0.00");
   });
 });

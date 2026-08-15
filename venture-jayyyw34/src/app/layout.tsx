@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "LocalPlate — homemade meals from your block",
   description:
-    "A micro-marketplace that connects neighborhood home cooks and bakers with people who want tonight’s homemade plate.",
+    "A Trinidad & Tobago micro-marketplace for homemade plates — doubles, roti, pelau, crab and dumpling — reserved for pickup in your town.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

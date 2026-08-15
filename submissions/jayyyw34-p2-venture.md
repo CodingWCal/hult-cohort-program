@@ -10,4 +10,4 @@
 | Investor log | `venture-jayyyw34/INVESTOR_LOG.md` |
 | App | https://localplate-jayyyw34.vercel.app |
 
-LocalPlate is a new application (not an extension of TriniIQ). Home cooks list daily menus; neighbors browse and reserve pickup.
+LocalPlate is a new application (not an extension of TriniIQ). Home cooks in Trinidad and Tobago list daily menus — doubles, roti, pelau, crab and dumpling; neighbours browse by town and reserve pickup.
