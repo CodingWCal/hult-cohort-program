@@ -1,0 +1,128 @@
+import type { Listing } from "./types";
+import { todayISO } from "./format";
+
+export function seedListings(): Listing[] {
+  const day = todayISO();
+  return [
+    {
+      id: "seed_jollof",
+      cookId: "seed_amara",
+      cookName: "Amara Cole",
+      neighborhood: "Cambridge",
+      title: "Jollof rice + crisp plantain",
+      description:
+        "Tomato-pepper jollof, fried plantain, and a cucumber-onion salad. Six plates from a home kitchen on Inman.",
+      priceCents: 1600,
+      servingsLeft: 6,
+      tags: ["dinner", "spicy"],
+      availableDate: day,
+      pickupWindow: "5:30–7:30pm",
+      seeded: true,
+    },
+    {
+      id: "seed_birria",
+      cookId: "seed_luis",
+      cookName: "Luis Ortega",
+      neighborhood: "Somerville",
+      title: "Birria tacos (3) + consomé",
+      description:
+        "Overnight-braised beef, griddled tortillas, onion, cilantro, and a cup of consomé. Pickup from Union Square.",
+      priceCents: 1500,
+      servingsLeft: 8,
+      tags: ["dinner"],
+      availableDate: day,
+      pickupWindow: "6:00–8:00pm",
+      seeded: true,
+    },
+    {
+      id: "seed_dosa",
+      cookId: "seed_priya",
+      cookName: "Priya Shah",
+      neighborhood: "Allston",
+      title: "Masala dosa box",
+      description:
+        "Crisp fermented dosa, potato masala, coconut chutney, and sambar in a takeaway box.",
+      priceCents: 1300,
+      servingsLeft: 10,
+      tags: ["dinner", "vegetarian"],
+      availableDate: day,
+      pickupWindow: "5:00–7:00pm",
+      seeded: true,
+    },
+    {
+      id: "seed_focaccia",
+      cookId: "seed_elena",
+      cookName: "Elena Rossi",
+      neighborhood: "Brookline",
+      title: "Rosemary focaccia + tomato tart",
+      description:
+        "Same-day bake. Half-sheet focaccia squares and a cherry-tomato tart slice. Cottage-style bakery items.",
+      priceCents: 1200,
+      servingsLeft: 12,
+      tags: ["baked", "vegetarian"],
+      availableDate: day,
+      pickupWindow: "10:00am–1:00pm",
+      seeded: true,
+    },
+    {
+      id: "seed_jerk",
+      cookId: "seed_keisha",
+      cookName: "Keisha Williams",
+      neighborhood: "Jamaica Plain",
+      title: "Jerk chicken plate",
+      description:
+        "Charred jerk chicken, rice and peas, and pickled cabbage. Four plates tonight only.",
+      priceCents: 1700,
+      servingsLeft: 4,
+      tags: ["dinner", "spicy"],
+      availableDate: day,
+      pickupWindow: "6:00–7:30pm",
+      seeded: true,
+    },
+    {
+      id: "seed_banhmi",
+      cookId: "seed_minh",
+      cookName: "Minh Tran",
+      neighborhood: "Fenway",
+      title: "Bánh mì + summer rolls",
+      description:
+        "Pork or tofu bánh mì with two herb-heavy summer rolls. Flag your protein in the order note.",
+      priceCents: 1400,
+      servingsLeft: 9,
+      tags: ["lunch", "dinner"],
+      availableDate: day,
+      pickupWindow: "11:30am–2:00pm",
+      seeded: true,
+    },
+    {
+      id: "seed_fatayer",
+      cookId: "seed_nora",
+      cookName: "Nora Haddad",
+      neighborhood: "South End",
+      title: "Spinach fatayer + lentil soup",
+      description:
+        "Three baked fatayer and a pint of lemony lentil soup. Vegetarian, packed for pickup.",
+      priceCents: 1300,
+      servingsLeft: 7,
+      tags: ["dinner", "vegetarian", "baked"],
+      availableDate: day,
+      pickupWindow: "5:00–7:00pm",
+      seeded: true,
+    },
+    {
+      id: "seed_kalbi",
+      cookId: "seed_ben",
+      cookName: "Ben Park",
+      neighborhood: "Medford",
+      title: "Korean short-rib bowl",
+      description:
+        "Soy-garlic short rib, kimchi, cucumber, and rice. Limited to five bowls.",
+      priceCents: 1800,
+      servingsLeft: 5,
+      tags: ["dinner"],
+      availableDate: day,
+      pickupWindow: "6:30–8:00pm",
+      seeded: true,
+    },
+  ];
+}

@@ -1,0 +1,12 @@
+{
+  "source": "https://localplate-jayyyw34.vercel.app/api/metrics",
+  "fetched_at": "2026-08-15T01:58:31.871Z",
+  "ok": true,
+  "persist_mode": "tmp-json",
+  "unique_users": 0,
+  "qualified_users": 0,
+  "orders": 0,
+  "as_of": "2026-08-15T01:58:31.871Z",
+  "excluded": "Cohort/founder ids containing jayyyw34 are excluded.",
+  "note": "Honest snapshot at PR open. The ≥25 qualified-external-user gate is not met on this snapshot. Not a self-report."
+}
