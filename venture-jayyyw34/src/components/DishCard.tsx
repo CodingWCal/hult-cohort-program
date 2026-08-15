@@ -17,6 +17,7 @@ export function DishCard({ listing }: { listing: Listing }) {
         <p className="text-xs uppercase tracking-[0.14em] text-[var(--sage)]">
           {island === "tobago" ? "Tobago" : "Trinidad"} · {listing.neighborhood} ·{" "}
           {listing.pickupWindow}
+          {listing.seeded ? " · Demo pot" : ""}
         </p>
         <h3 className="mt-2 font-serif text-2xl leading-snug">{listing.title}</h3>
         {listing.cookLine ? (

@@ -1,248 +1,56 @@
+import { CATALOG, potToListing } from "./catalog";
+import { todayISO, weekdayFromISO } from "./format";
 import type { Listing } from "./types";
-import { todayISO } from "./format";
 
-export function seedListings(): Listing[] {
-  const day = todayISO();
-  return [
-    {
-      id: "seed_doubles",
-      cookId: "seed_kamla",
-      cookName: "Kamla Persad",
-      cookLine: "St. James, wrapping since savannah days",
-      neighborhood: "St. James",
-      island: "trinidad",
-      title: "Doubles (bara, channa, slight spicy)",
-      description:
-        "Soft bara, stewed channa, cucumber, and tamarind. Slight or slight-plus — say in the note. Wrap for the road from a St. James kitchen.",
-      priceCents: 1200,
-      servingsLeft: 20,
-      tags: ["breakfast", "lunch", "vegetarian"],
-      pepper: "slight",
-      daypart: "morning",
-      visual: "doubles",
-      availableDate: day,
-      pickupWindow: "6:30–10:00am",
-      seeded: true,
-    },
-    {
-      id: "seed_bake_shark",
-      cookId: "seed_dexter",
-      cookName: "Dexter Joseph",
-      cookLine: "North coast Saturday, still sandy",
-      neighborhood: "Maracas",
-      island: "trinidad",
-      title: "Bake and shark",
-      description:
-        "Fried bake, seasoned shark, chadon beni, pineapple chow, and pepper sauce. North-coast Saturday energy, boxed for pickup.",
-      priceCents: 6500,
-      servingsLeft: 8,
-      tags: ["lunch", "spicy"],
-      pepper: "slight-plus",
-      daypart: "lunch",
-      visual: "bake",
-      availableDate: day,
-      pickupWindow: "11:00am–3:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_roti",
-      cookId: "seed_asha",
-      cookName: "Asha Mohammed",
-      cookLine: "San Fernando Sunday roti, no shortcuts",
-      neighborhood: "San Fernando",
-      island: "trinidad",
-      title: "Dhalpuri + chicken roti",
-      description:
-        "Dhalpuri skin, curry chicken, potato, and channa. South-side Sunday roti. Ask for buss-up-shut instead in the note.",
-      priceCents: 4000,
-      servingsLeft: 10,
-      tags: ["lunch", "dinner"],
-      pepper: "slight",
-      daypart: "lunch",
-      visual: "roti",
-      availableDate: day,
-      pickupWindow: "11:00am–2:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_pelau",
-      cookId: "seed_marlon",
-      cookName: "Marlon Baptiste",
-      cookLine: "Central pot, browned sugar first",
-      neighborhood: "Chaguanas",
-      island: "trinidad",
-      title: "Chicken pelau plate",
-      description:
-        "Browned-sugar pelau with pigeon peas, pumpkin, and coleslaw. Central Trinidad pot-cook, packed in a foil tray.",
-      priceCents: 4500,
-      servingsLeft: 12,
-      tags: ["lunch", "dinner"],
-      pepper: "slight",
-      daypart: "lunch",
-      visual: "pelau",
-      availableDate: day,
-      pickupWindow: "12:00–6:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_crab_dumpling",
-      cookId: "seed_yvonne",
-      cookName: "Yvonne Clarke",
-      cookLine: "Scarborough, coconut and crab",
-      neighborhood: "Scarborough",
-      island: "tobago",
-      title: "Crab and dumpling",
-      description:
-        "Tobago curry crab, coconut dumpling, and provision. Limited pot from a Scarborough home kitchen.",
-      priceCents: 8500,
-      servingsLeft: 6,
-      tags: ["dinner"],
-      pepper: "slight-plus",
-      daypart: "dinner",
-      visual: "crab",
-      availableDate: day,
-      pickupWindow: "4:00–7:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_aloo_pholourie",
-      cookId: "seed_ravi",
-      cookName: "Ravi Singh",
-      cookLine: "East–West Corridor snack run",
-      neighborhood: "Tunapuna",
-      island: "trinidad",
-      title: "Aloo pie + pholourie box",
-      description:
-        "Two aloo pies and a bag of pholourie with mango and tamarind chutney. East–West Corridor snack run.",
-      priceCents: 2000,
-      servingsLeft: 15,
-      tags: ["snack", "vegetarian", "baked"],
-      pepper: "slight",
-      daypart: "snack",
-      visual: "aloo",
-      availableDate: day,
-      pickupWindow: "3:00–6:30pm",
-      seeded: true,
-    },
-    {
-      id: "seed_curry_duck",
-      cookId: "seed_nadia",
-      cookName: "Nadia Ali",
-      neighborhood: "Arima",
-      cookLine: "Arima weekend pot, bone-in",
-      island: "trinidad",
-      title: "Curry duck + sada roti",
-      description:
-        "Weekend curry duck, potato, and hot sada. Arima pot — say if you want it bone-in or a milder pepper.",
-      priceCents: 7000,
-      servingsLeft: 8,
-      tags: ["dinner", "spicy"],
-      pepper: "plenty",
-      daypart: "dinner",
-      visual: "duck",
-      availableDate: day,
-      pickupWindow: "5:00–8:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_oildown",
-      cookId: "seed_curtis",
-      cookName: "Curtis Williams",
-      cookLine: "Crown Point one-pot",
-      neighborhood: "Crown Point",
-      island: "tobago",
-      title: "Oil down",
-      description:
-        "Breadfruit, dasheen bush, coconut milk, and salted meat. Tobago one-pot, scooped for pickup near Crown Point.",
-      priceCents: 5500,
-      servingsLeft: 7,
-      tags: ["dinner"],
-      pepper: "slight",
-      daypart: "dinner",
-      visual: "oil",
-      availableDate: day,
-      pickupWindow: "5:30–7:30pm",
-      seeded: true,
-    },
-    {
-      id: "seed_sunday_lunch",
-      cookId: "seed_indra",
-      cookName: "Indra Rampersad",
-      cookLine: "Campus-side Sunday plate",
-      neighborhood: "St. Augustine",
-      island: "trinidad",
-      title: "Sunday lunch: stew chicken, macaroni pie, callaloo",
-      description:
-        "Stew chicken, baked macaroni pie, callaloo, and a spoon of rice. Campus-side Sunday plate.",
-      priceCents: 5500,
-      servingsLeft: 9,
-      tags: ["lunch", "dinner"],
-      pepper: "slight",
-      daypart: "lunch",
-      visual: "sunday",
-      availableDate: day,
-      pickupWindow: "12:00–3:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_corn_soup",
-      cookId: "seed_lisa",
-      cookName: "Lisa Charles",
-      cookLine: "Woodbrook after-fete cup",
-      neighborhood: "Woodbrook",
-      island: "trinidad",
-      title: "Corn soup (fete size)",
-      description:
-        "Split peas, sweet corn, dumpling, and provision. After-fete cup from a Woodbrook kitchen. Pepper on the side.",
-      priceCents: 2500,
-      servingsLeft: 14,
-      tags: ["snack", "dinner"],
-      pepper: "slight-plus",
-      daypart: "night",
-      visual: "soup",
-      availableDate: day,
-      pickupWindow: "7:00–11:00pm",
-      seeded: true,
-    },
-    {
-      id: "seed_choka",
-      cookId: "seed_priya_tt",
-      cookName: "Priya Ramcharan",
-      cookLine: "San Juan, fire-roast first",
-      neighborhood: "San Juan",
-      island: "trinidad",
-      title: "Sada roti + tomato choka",
-      description:
-        "Hot sada, fire-roasted tomato choka, and a side of baigan if you ask. Light breakfast from San Juan.",
-      priceCents: 1800,
-      servingsLeft: 10,
-      tags: ["breakfast", "vegetarian"],
-      pepper: "slight",
-      daypart: "morning",
-      visual: "choka",
-      availableDate: day,
-      pickupWindow: "6:00–9:00am",
-      seeded: true,
-    },
-    {
-      id: "seed_sweetbread",
-      cookId: "seed_helen",
-      cookName: "Helen Gopaul",
-      cookLine: "Diego Martin bake for tea",
-      neighborhood: "Diego Martin",
-      island: "trinidad",
-      title: "Coconut sweet bread",
-      description:
-        "Same-day coconut sweet bread loaf, cherries and raisins. Diego Martin bake — slice it for tea.",
-      priceCents: 3500,
-      servingsLeft: 6,
-      tags: ["baked", "snack"],
-      pepper: "none",
-      daypart: "snack",
-      visual: "bread",
-      availableDate: day,
-      pickupWindow: "9:00am–1:00pm",
-      seeded: true,
-    },
-  ];
+const BOARD_SIZE = 8;
+
+export function hashString(input: string): number {
+  let hash = 2166136261;
+  for (let i = 0; i < input.length; i += 1) {
+    hash ^= input.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+export function seededShuffle<T>(items: T[], seed: number): T[] {
+  const copy = [...items];
+  let state = seed || 1;
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+    const j = state % (i + 1);
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+export function pickDailyBoard(day: string): Listing[] {
+  const weekday = weekdayFromISO(day);
+  const eligible = CATALOG.filter((pot) => pot.days.length === 0 || pot.days.includes(weekday));
+  const pool = eligible.length ? eligible : CATALOG;
+  const shuffled = seededShuffle(pool, hashString(`localplate:${day}`));
+  const picked: typeof CATALOG = [];
+
+  const take = (predicate: (pot: (typeof CATALOG)[number]) => boolean) => {
+    const next = shuffled.find(
+      (pot) => predicate(pot) && !picked.some((row) => row.id === pot.id),
+    );
+    if (next) picked.push(next);
+  };
+
+  take((pot) => pot.island === "tobago");
+  take((pot) => pot.daypart === "morning");
+  if (weekday === 6) take((pot) => pot.id === "seed_bake_shark");
+  if (weekday === 0) take((pot) => pot.id === "seed_sunday_lunch");
+  if (weekday === 5) take((pot) => pot.id === "seed_corn_soup" || pot.id === "seed_fried_rice");
+  for (const pot of shuffled) {
+    if (picked.length >= BOARD_SIZE) break;
+    if (!picked.some((row) => row.id === pot.id)) picked.push(pot);
+  }
+
+  return picked.map((pot) => potToListing(pot, day));
+}
+
+export function seedListings(day = todayISO()): Listing[] {
+  return pickDailyBoard(day);
 }

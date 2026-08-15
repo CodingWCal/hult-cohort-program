@@ -48,8 +48,8 @@ export default function BrowsePage() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="font-serif text-4xl">Tonight’s menus</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
-        Trinidad or Tobago, then town and daypart. Seeded kitchens keep the wrap
-        full; anything you list as a cook appears here too.
+        Demo pots rotate each Trinidad & Tobago day so Saturday is not Monday.
+        Cook-listed dishes stay. Filter by island, town, and daypart.
       </p>
       <div className="mt-6 flex flex-wrap gap-2">
         {(

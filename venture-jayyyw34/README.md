@@ -40,7 +40,7 @@ Open http://localhost:3000 — browse menus, join (name + email + role), list a 
 ## Notes
 
 - Trinidad | Tobago filter, dayparts, pepper (slight / slight-plus / plenty), WhatsApp share, and a collect code after reserve.
-- Seeded Trinidad & Tobago kitchens (St. James, Maracas, San Fernando, Scarborough, and more) keep the board from being empty. They are demo listings, not claimed live vendors.
+- Demo pots rotate each Trinidad & Tobago calendar day (weekday-themed board). Cook listings stay.
 - Prices display in TT dollars.
 - Accounts are email + name + role. No password flow (founder MVP preference).
 - Serverless persistence uses a temporary JSON store and can reset. Do not put secrets in the forms.

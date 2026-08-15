@@ -3,8 +3,24 @@ export function formatPrice(cents: number): string {
   return `TT$${(cents / 100).toFixed(2)}`;
 }
 
-export function todayISO(): string {
-  return new Date().toISOString().slice(0, 10);
+export function todayISO(now = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Port_of_Spain",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
+}
+
+export function weekdayFromISO(iso: string): number {
+  const [year, month, day] = iso.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day, 12, 0, 0)).getUTCDay();
+}
+
+export function weekdayName(iso: string): string {
+  return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][
+    weekdayFromISO(iso)
+  ];
 }
 
 export function id(prefix: string): string {

@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
-import { id } from "./format";
+import { id, todayISO } from "./format";
 import { daypartFromWindow, islandForTown } from "./place";
 import { seedListings } from "./seed";
 import type { Account, ErrorRecord, Listing, Order, PlatformEvent } from "./types";
@@ -19,6 +19,7 @@ const FILE =
   (process.env.VERCEL ? "/tmp/localplate.json" : ".data/localplate.json");
 
 let memory: Db | null = null;
+let memoryDay: string | null = null;
 
 function normalizeListing(row: Listing): Listing {
   return {
@@ -30,10 +31,16 @@ function normalizeListing(row: Listing): Listing {
   };
 }
 
-function emptyDb(): Db {
+function applyDailySeeds(db: Db, day: string): Db {
+  const custom = (db.listings || []).filter((row) => !row.seeded).map(normalizeListing);
+  db.listings = [...custom, ...seedListings(day)];
+  return db;
+}
+
+function emptyDb(day: string): Db {
   return {
     accounts: [],
-    listings: seedListings(),
+    listings: seedListings(day),
     orders: [],
     events: [],
     errors: [],
@@ -41,18 +48,23 @@ function emptyDb(): Db {
 }
 
 function load(): Db {
-  if (memory) return memory;
+  const day = todayISO();
+  if (memory && memoryDay === day) return memory;
+  if (memory && memoryDay !== day) {
+    memory = applyDailySeeds(memory, day);
+    memoryDay = day;
+    save(memory);
+    return memory;
+  }
   try {
     const raw = readFileSync(FILE, "utf8");
     const parsed = JSON.parse(raw) as Db;
-    const custom = (parsed.listings || [])
-      .filter((row) => !row.seeded)
-      .map(normalizeListing);
-    parsed.listings = [...custom, ...seedListings()];
-    memory = parsed;
+    memory = applyDailySeeds(parsed, day);
+    memoryDay = day;
     return memory;
   } catch {
-    memory = emptyDb();
+    memory = emptyDb(day);
+    memoryDay = day;
     return memory;
   }
 }

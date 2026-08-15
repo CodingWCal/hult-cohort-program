@@ -1,21 +1,24 @@
 import Link from "next/link";
 import { DishCard } from "@/components/DishCard";
+import { todayISO, weekdayName } from "@/lib/format";
 import { isOnNow } from "@/lib/place";
 import { getDb } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
+  const day = todayISO();
   const listings = getDb().listings;
   const onNow = listings.filter((listing) => isOnNow(listing)).slice(0, 3);
-  const featured = listings.slice(0, 6);
+  const onNowIds = new Set(onNow.map((listing) => listing.id));
+  const featured = listings.filter((listing) => !onNowIds.has(listing.id)).slice(0, 6);
 
   return (
     <div>
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-end">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--sage)]">
-            Trinidad & Tobago · Today’s Pot
+            Trinidad & Tobago · {weekdayName(day)}’s pot · {day}
           </p>
           <h1 className="mt-3 max-w-xl font-serif text-5xl leading-[1.05] md:text-6xl">
             Tonight’s pelau, from a kitchen on your street.
@@ -76,7 +79,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-20">
         <div className="mb-6 flex items-end justify-between gap-4">
-          <h2 className="font-serif text-3xl">Plates up now</h2>
+          <h2 className="font-serif text-3xl">{weekdayName(day)}’s plates</h2>
           <Link href="/browse" className="text-sm text-[var(--clay)]">
             See all menus
           </Link>
