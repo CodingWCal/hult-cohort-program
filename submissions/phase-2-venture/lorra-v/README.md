@@ -12,7 +12,7 @@ Accompanying three-year financial model: [`investor/TEF_Three_Year_Financial_Mod
 ## App URL + user metrics
 **Production app:** https://tef-deploy.vercel.app
 **Metrics source:** own instance of the Ludwitt/Hult reference API (Railway), same instance used for Week 4's evidence — https://ludwitt-hult-api-production.up.railway.app, app_id d548f419-afc3-47c7-822e-c04e489a93cc
-**Snapshot:** August 14, 2026 — Ludwitt/Hult API reports `qualified_users: 7`. Two of these are founder test accounts used during development (`external.learner.506589@example.com`, a Checkpoint B production smoke-test account; `webblywebpro@gmail.com`, a dev-testing account) — excluded from the real count. **Real external qualified users: 5**, with active outreach continuing through Sunday's deadline.
+**Snapshot:** August 16, 2026, ~4:44pm ET — Ludwitt/Hult API reports `qualified_users: 11`. Two are founder test accounts (`external.learner.506589@example.com`, `webblywebpro@gmail.com`) — excluded. **Real external qualified users: 11 minus 2**.
 
 ## Investor touch log
 Reached out directly to a Venture Capital Resident and Director at a regional founder-support organization (contact redacted), sharing the live product and requesting feedback on venture viability. He reviewed the pitch and responded substantively — noting genuine interest in the problem space, and offering a structured paid advisory session (rather than an informal chat). Given founder budget constraints at this stage, the paid session wasn't booked; the relationship remains open, and he indicated he would flag relevant introductions from his network after reviewing the product further.
