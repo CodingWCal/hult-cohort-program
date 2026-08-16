@@ -40,7 +40,10 @@ export default function InvestorsPage() {
         packet — this is a first meeting.
       </p>
       <p>
-        <Link className="btn primary" href="/investors/deck">
+        <Link className="btn primary" href="/demo">
+          Open product demo
+        </Link>{" "}
+        <Link className="btn" href="/investors/deck">
           Open pitch deck
         </Link>
       </p>

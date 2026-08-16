@@ -3,23 +3,17 @@ import { JOB_TRACKS } from "@/lib/lessons";
 import { TRACK_FAMILY_ORDER, TRACK_FAMILY_SHORT, trackFamily } from "@/lib/track-family";
 import { SITE } from "@/lib/site";
 import { PracticeJournal } from "@/components/PracticeJournal";
-
-const FEATURED = [
-  "registered-nurse",
-  "software-engineer",
-  "high-school-teacher",
-  "civil-engineer",
-  "attorney",
-  "social-worker",
-];
+import { FirstVisitTour } from "@/components/FirstVisitTour";
+import { DEMO_FEATURED_SLUGS } from "@/lib/demo-tour";
 
 export default function HomePage() {
-  const featured = FEATURED.map((slug) => JOB_TRACKS.find((t) => t.slug === slug)).filter(
+  const featured = DEMO_FEATURED_SLUGS.map((slug) => JOB_TRACKS.find((t) => t.slug === slug)).filter(
     Boolean,
   ) as typeof JOB_TRACKS;
 
   return (
     <>
+      <FirstVisitTour />
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Not another flashcard bank</p>
@@ -29,9 +23,9 @@ export default function HomePage() {
             <Link href="/practice" className="btn primary">
               Open a room
             </Link>
-            <a className="btn" href="#difference">
-              What makes it different
-            </a>
+            <Link href="/demo" className="btn">
+              See a demo
+            </Link>
           </div>
         </div>
         <div className="hero-stage" aria-hidden="true">

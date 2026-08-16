@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test tests/qualify.test.ts tests/metrics.test.ts tests/response-feedback.test.ts",
+    "test": "node --experimental-strip-types --test tests/qualify.test.ts tests/metrics.test.ts tests/response-feedback.test.ts tests/demo-tour.test.ts",
     "smoke": "node scripts/smoke-integration.mjs",
     "snapshot": "node scripts/snapshot-metrics.mjs"
   },

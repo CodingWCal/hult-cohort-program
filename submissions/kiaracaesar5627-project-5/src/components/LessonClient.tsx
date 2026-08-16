@@ -285,7 +285,7 @@ export function InterviewRoundClient({
         </div>
         <h1>{title}</h1>
         <p className="setting-line">{setting}</p>
-        <div className="timer-bar" aria-live="polite">
+        <div className="timer-bar" data-tour="timer" aria-live="polite">
           <span className={timedOut ? "timer danger" : pressure ? "timer warn" : "timer"}>
             {formatClock(remaining)}
           </span>
@@ -331,7 +331,7 @@ export function InterviewRoundClient({
       </header>
 
       <div className="room-grid">
-        <div className="room-interviewer">
+        <div className="room-interviewer" data-tour="interviewer">
           <p className="meta room-label">Across the table</p>
           <aside className="scenario-box">
             <p className="meta">Application scenario</p>
@@ -349,7 +349,7 @@ export function InterviewRoundClient({
           ) : null}
         </div>
 
-        <div className="room-candidate">
+        <div className="room-candidate" data-tour="review">
           <p className="meta room-label">Your side of the table</p>
           <label className="notes-panel">
             <span className="meta">Scratch answer (stays on this device)</span>
@@ -377,7 +377,7 @@ export function InterviewRoundClient({
           </div>
           {coaching ? <AnswerReview feedback={coaching} /> : null}
 
-          <div className="lesson-body">
+          <div className="lesson-body" data-tour="playbook">
             <div className="playbook-toggle-row">
               <h2 className="round-subhead">How you work this question</h2>
               <button
@@ -404,7 +404,7 @@ export function InterviewRoundClient({
         </div>
       </div>
 
-      <section className="quiz" aria-labelledby="debrief-title">
+      <section className="quiz" data-tour="debrief" aria-labelledby="debrief-title">
         <h2 id="debrief-title">Debrief</h2>
         <p className="quiz-prompt">{debrief.prompt}</p>
         <ul className="choices">

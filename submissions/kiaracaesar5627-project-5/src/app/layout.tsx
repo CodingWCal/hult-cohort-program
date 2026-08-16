@@ -38,6 +38,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <footer className="site-footer">
             {SITE.name} · mock interview practice · @{SITE.handle} ·{" "}
+            <Link href="/demo">Demo</Link>
+            {" · "}
             <Link href="/tips">Pro tips</Link>
             {" · "}
             <Link href="/privacy">Privacy</Link>
