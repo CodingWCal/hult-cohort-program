@@ -1293,9 +1293,6 @@ a {
 }
 
 .demo-coach {
-  position: sticky;
-  top: 0;
-  z-index: 8;
   margin-bottom: 1.25rem;
   padding: 1.1rem 1.2rem;
   background: var(--panel);
