@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTrack, JOB_TRACKS } from "@/lib/lessons";
+import { isPressureStage, stageLabel } from "@/lib/track-model";
 import { trackFamily } from "@/lib/track-family";
 import { SessionHeartbeat } from "@/components/SessionHeartbeat";
 
@@ -15,8 +16,8 @@ export default async function TrackPage({ params }: Props) {
   const track = getTrack(trackSlug);
   if (!track) notFound();
   const first = track.scenarios[0];
-  const edge = track.scenarios.filter((s) => s.stage === "Edge");
-  const core = track.scenarios.filter((s) => s.stage !== "Edge");
+  const pressure = track.scenarios.filter((s) => isPressureStage(s.stage));
+  const core = track.scenarios.filter((s) => !isPressureStage(s.stage));
 
   return (
     <section className="section" style={{ borderTop: "none", paddingTop: "2rem" }}>
@@ -30,9 +31,9 @@ export default async function TrackPage({ params }: Props) {
         <Link href={`/practice/${track.slug}/loop`} className="btn primary">
           Start mock loop (5 rooms)
         </Link>
-        {edge[0] ? (
-          <Link href={`/practice/${track.slug}/${edge[0].slug}`} className="btn">
-            Jump to Edge set
+        {pressure[0] ? (
+          <Link href={`/practice/${track.slug}/${pressure[0].slug}`} className="btn">
+            Jump to pressure questions
           </Link>
         ) : null}
         {first ? (
@@ -42,23 +43,23 @@ export default async function TrackPage({ params }: Props) {
         ) : null}
       </div>
       <p className="meta" style={{ marginBottom: "1.25rem" }}>
-        {track.scenarios.length} interviewer questions · {edge.length} cutting-edge Edge rooms
+        {track.scenarios.length} interviewer questions · {pressure.length} pressure questions
       </p>
 
-      <h3 className="track-section-label">Cutting-edge Edge set</h3>
+      <h3 className="track-section-label">Pressure questions</h3>
       <p className="support tight" style={{ marginBottom: "1rem" }}>
-        Modern signals interviewers use to separate strong candidates — AI judgment, ambiguity,
-        influence, learning velocity, and integrity under pressure.
+        Five harder prompts: unclear asks, going fast vs doing it right, and where you draw the
+        line.
       </p>
       <div className="lesson-grid" style={{ marginBottom: "2rem" }}>
-        {edge.map((s, i) => (
+        {pressure.map((s, i) => (
           <Link
             key={s.slug}
             href={`/practice/${track.slug}/${s.slug}`}
             className="lesson-link edge-link"
           >
             <p className="meta">
-              Edge {i + 1}/{edge.length} · {s.minutes} min
+              {stageLabel(s.stage)} {i + 1}/{pressure.length} · {s.minutes} min
             </p>
             <h3>{s.title}</h3>
             <p>{s.summary}</p>
@@ -75,7 +76,7 @@ export default async function TrackPage({ params }: Props) {
             className="lesson-link"
           >
             <p className="meta">
-              {i + 1}/{core.length} · {s.stage} · {s.minutes} min
+              {i + 1}/{core.length} · {stageLabel(s.stage)} · {s.minutes} min
             </p>
             <h3>{s.title}</h3>
             <p>{s.summary}</p>

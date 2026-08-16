@@ -2,18 +2,19 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { getTrack, JOB_TRACKS } from "@/lib/lessons";
+import { isPressureStage } from "@/lib/track-model";
 import { trackFamily } from "@/lib/track-family";
 import { SessionHeartbeat } from "@/components/SessionHeartbeat";
 import { MockLoopClient } from "@/components/MockLoopClient";
 
 type Props = { params: Promise<{ track: string }> };
 
-/** Mix core bank + cutting-edge Edge rooms so a loop trains modern signals. */
+/** Mix core bank + pressure questions so a loop includes harder judgment prompts. */
 function pickLoopScenarios<T extends { stage: string }>(all: T[], count: number): T[] {
-  const edge = all.filter((s) => s.stage === "Edge");
-  const core = all.filter((s) => s.stage !== "Edge");
-  const edgeTake = Math.min(2, edge.length, count);
-  const coreTake = count - edgeTake;
+  const pressureQs = all.filter((s) => isPressureStage(s.stage));
+  const core = all.filter((s) => !isPressureStage(s.stage));
+  const pressureTake = Math.min(2, pressureQs.length, count);
+  const coreTake = count - pressureTake;
   const corePicks: T[] = [];
   if (core.length && coreTake > 0) {
     const step = Math.max(1, Math.floor(core.length / coreTake));
@@ -21,8 +22,8 @@ function pickLoopScenarios<T extends { stage: string }>(all: T[], count: number)
       corePicks.push(core[Math.min(i * step, core.length - 1)]!);
     }
   }
-  const edgePicks = edge.slice(0, edgeTake);
-  return [...corePicks, ...edgePicks].slice(0, count);
+  const pressurePicks = pressureQs.slice(0, pressureTake);
+  return [...corePicks, ...pressurePicks].slice(0, count);
 }
 
 export function generateStaticParams() {
@@ -57,7 +58,7 @@ export default async function MockLoopPage({ params }: Props) {
       </p>
       <h2 className="loop-intro-title">{track.role} interview day</h2>
       <p className="support" style={{ marginBottom: "1.5rem" }}>
-        Five rooms in one sitting — including cutting-edge Edge prompts — with timer, speak mode,
+        Five rooms in one sitting — including pressure questions — with timer, speak mode,
         answer review, debrief, and self-score after each.
       </p>
       <MockLoopClient

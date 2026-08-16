@@ -2,7 +2,7 @@ export const SITE = {
   name: "Interview Room",
   tagline: "Sit across the table from the interview for the job you applied to.",
   description:
-    "Role-specific mock interviews across 16 career majors and 320 tracks — 30 prompts each including 5 cutting-edge Edge rooms, speak mode, mock loops, answer review with interview tips, and a private on-device journal.",
+    "Role-specific mock interviews across 16 career majors and 320 tracks — 30 prompts each including 5 pressure questions, speak mode, mock loops, answer review with interview tips, and a private on-device journal.",
   topic: "Interview prep by role",
   handle: "kiaracaesar5627",
   cohort: "Hult Cohort Summer Pilot 2026",

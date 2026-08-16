@@ -5,6 +5,7 @@ import Link from "next/link";
 import { InterviewRoundClient, AnswerReview } from "@/components/LessonClient";
 import { recordPractice, type SelfScore } from "@/lib/practice-journal";
 import { reviewResponse } from "@/lib/response-feedback";
+import { isPressureStage, stageLabel } from "@/lib/track-model";
 
 export type LoopRound = {
   slug: string;
@@ -133,7 +134,7 @@ export function MockLoopClient({
             notes: "",
             playbook: [],
             role,
-            stage: results.some((r) => r.stage === "Edge") ? "Edge" : "Core",
+            stage: results.some((r) => isPressureStage(r.stage)) ? "Edge" : "Core",
             scores: {
               structure: Math.round(avg.structure),
               evidence: Math.round(avg.evidence),
@@ -147,7 +148,7 @@ export function MockLoopClient({
           {results.map((r, i) => (
             <li key={r.slug}>
               <span className="meta">
-                {i + 1}. {r.stage}
+                {i + 1}. {stageLabel(r.stage)}
               </span>
               <strong>{r.title}</strong>
               <span>

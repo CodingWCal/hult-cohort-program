@@ -28,9 +28,9 @@ for (const def of TRACK_DEFS) {
   if (scenarioSlugs.size !== 30) {
     throw new Error(`${def.slug} has duplicate scenario slugs`);
   }
-  const edge = scenarios.filter((s) => s.stage === "Edge");
-  if (edge.length !== 5) {
-    throw new Error(`${def.slug} expected 5 Edge questions, got ${edge.length}`);
+  const pressure = scenarios.filter((s) => s.stage === "Edge");
+  if (pressure.length !== 5) {
+    throw new Error(`${def.slug} expected 5 pressure questions, got ${pressure.length}`);
   }
 }
 
@@ -44,5 +44,5 @@ for (const fam of TRACK_FAMILY_ORDER) {
 
 console.log("total_tracks", TRACK_DEFS.length);
 console.log("questions_per_track", 30);
-console.log("edge_questions_per_track", 5);
+console.log("pressure_questions_per_track", 5);
 console.log("OK");

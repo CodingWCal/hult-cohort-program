@@ -17,7 +17,7 @@ function t(def: TrackDef, i: number): string {
   return def.themes[i % def.themes.length];
 }
 
-/** 30 role-aware templates; last five are cutting-edge interview edges. */
+/** 30 role-aware templates; last five are pressure questions (judgment under strain). */
 const TEMPLATES: Template[] = [
   {
     id: "q01-core-challenge",
@@ -766,7 +766,7 @@ const TEMPLATES: Template[] = [
         "Judgment shows in what you ask.",
       ),
   },
-  // —— Cutting-edge five: modern signals that separate strong candidates ——
+  // —— Pressure five: judgment when the ask is messy ——
   {
     id: "q26-edge-ai-judgment",
     stage: "Edge",
@@ -774,7 +774,7 @@ const TEMPLATES: Template[] = [
     minutes: 14,
     summary: "Use modern tools; keep accountability and verification.",
     scenario: (def) =>
-      `${def.role} edge screen. Interviewers assume AI is available for ${t(def, 0)} work and want judgment, not denial or blind trust.`,
+      `${def.role} interview. They assume AI is available for ${t(def, 0)} work and want judgment, not denial or blind trust.`,
     interviewer: (def) =>
       `How would you use AI or automation as a ${def.role} for ${t(def, 0)} in a ${def.setting}—what would you let it draft, what would you never outsource, and how would you verify before anyone relies on it?`,
     playbook: (def) => [
@@ -786,7 +786,7 @@ const TEMPLATES: Template[] = [
     ],
     debrief: () =>
       d(
-        "Cutting-edge answers show:",
+        "Strong answers show:",
         [
           "I never use AI / I always paste whatever it says",
           "Clear divide: accelerate drafts, keep judgment, verify before trust",
@@ -894,7 +894,7 @@ const TEMPLATES: Template[] = [
     minutes: 14,
     summary: "Modern pressure tests: privacy, safety, honesty, shortcuts.",
     scenario: (def) =>
-      `${def.setting}. Speed is celebrated; a shortcut would touch ${t(def, 4)} or trust. This is the edge that wins offers—or ends them.`,
+      `${def.setting}. Speed is celebrated; a shortcut would touch ${t(def, 4)} or trust. This is where offers are won—or lost.`,
     interviewer: (def) =>
       `Leadership wants a faster result on ${t(def, 4)} in a way that feels ethically or professionally gray. As a ${def.role}, how do you respond in the room, what alternative do you offer, and where is your hard stop?`,
     playbook: () => [

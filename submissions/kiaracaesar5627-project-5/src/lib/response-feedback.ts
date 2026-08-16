@@ -1,4 +1,5 @@
 import type { SelfScore } from "@/lib/practice-journal";
+import { isPressureStage } from "@/lib/track-model";
 
 export type ResponseSignals = {
   wordCount: number;
@@ -124,9 +125,9 @@ export function reviewResponse(input: {
     );
   }
 
-  if (input.stage === "Edge") {
+  if (isPressureStage(input.stage)) {
     improvements.push(
-      "Edge rooms want a tradeoff and a hard stop. Say what you protect, what you defer, and where you will not go.",
+      "This harder question wants a tradeoff and a clear limit. Say what you protect, what can wait, and where you will not go.",
     );
   }
 
@@ -168,7 +169,7 @@ export function reviewResponse(input: {
   }
 
   interviewTips.push("Pause two seconds after the question. Restate it in one line so you buy thinking time without filling with “um.”");
-  if (input.stage === "Edge" || hedging) {
+  if (isPressureStage(input.stage) || hedging) {
     interviewTips.push(
       "When the ask is gray, name the risk in plain language, offer a safer path that still moves the goal, then state your hard stop.",
     );

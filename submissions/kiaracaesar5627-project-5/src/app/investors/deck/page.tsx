@@ -32,7 +32,7 @@ const SLIDES: { title: string; body: string[] }[] = [
     title: "Solution",
     body: [
       "A practice room organized by job application, not by algorithm topic.",
-      "320 tracks × 30 interviewer questions (5 cutting-edge Edge prompts per track), each with scenario, playbook, debrief, and a local answer review with interview tips.",
+      "320 tracks × 30 interviewer questions (5 pressure questions per track), each with scenario, playbook, debrief, and a local answer review with interview tips.",
       "Session events so practice is measurable (lesson_started / completed / quiz_submitted).",
     ],
   },

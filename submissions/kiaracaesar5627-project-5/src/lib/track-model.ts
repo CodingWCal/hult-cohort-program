@@ -17,6 +17,17 @@ export type InterviewScenario = {
   debrief: Debrief;
 };
 
+/** Catalog key for the five judgment-under-pressure questions. */
+export const PRESSURE_STAGE = "Edge";
+
+export function isPressureStage(stage: string): boolean {
+  return stage === PRESSURE_STAGE;
+}
+
+export function stageLabel(stage: string): string {
+  return isPressureStage(stage) ? "Pressure" : stage;
+}
+
 export type JobTrack = {
   slug: string;
   role: string;

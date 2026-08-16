@@ -5,6 +5,7 @@ import Link from "next/link";
 import { track } from "@/components/SessionHeartbeat";
 import { recordPractice, type SelfScore } from "@/lib/practice-journal";
 import { reviewResponse, type ResponseFeedback } from "@/lib/response-feedback";
+import { stageLabel } from "@/lib/track-model";
 
 type Debrief = {
   prompt: string;
@@ -275,8 +276,7 @@ export function InterviewRoundClient({
       <header className="lesson-head">
         <div className="round-meta-row">
           <p className="eyebrow">
-            {role} · {stage}
-            {stage === "Edge" ? " · Cutting edge" : ""}
+            {role} · {stageLabel(stage)}
             {mode === "loop" ? " · Mock loop" : ""}
           </p>
           <p className="meta">

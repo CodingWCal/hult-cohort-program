@@ -60,7 +60,7 @@ export default function HomePage() {
         <ol className="how-steps">
           <li>
             <strong>320 job tracks</strong>
-            <span>16 career majors · 30 prompts each · including 5 cutting-edge Edge rooms</span>
+            <span>16 career majors · 30 prompts each · including 5 pressure questions</span>
           </li>
           <li>
             <strong>Speak mode + timer</strong>
