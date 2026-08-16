@@ -10,7 +10,7 @@ Interview Room is a mock-interview product organized by **job application track*
 
 ## Product
 
-- Live: https://kiaracaesar5627-project-4.vercel.app  
+- Live: https://interviewroom-kiaracaesar5627.vercel.app/  
 - Practice: `/practice` (guest cookie identity)  
 - Platform launch: `/launch?token=` (Ludwitt JWT)  
 - Privacy: `/privacy`  

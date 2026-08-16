@@ -2,9 +2,9 @@
 
 ## URL
 
-https://kiaracaesar5627-project-4.vercel.app  
+https://interviewroom-kiaracaesar5627.vercel.app/  
 
-Same Vercel project as Week 4 (`kiaracaesar5627-project-4`). This venture extends that app; it is not a second invented domain.
+Same Vercel project as Week 4 (`kiaracaesar5627-project-4`), aliased as `interviewroom-kiaracaesar5627`. This venture extends that app; it is not a second invented product.
 
 ## Stack
 

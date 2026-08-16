@@ -101,11 +101,13 @@ a {
   gap: 1.25rem;
 }
 
-.nav a:hover {
+.nav a:hover,
+.settings-toggle:hover {
   color: var(--ink);
 }
 
 .nav a:focus-visible,
+.settings-toggle:focus-visible,
 .btn:focus-visible,
 .choice:focus-visible,
 .chip:focus-visible,
@@ -113,6 +115,46 @@ a {
 .notes-panel textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+.settings-menu {
+  position: relative;
+}
+
+.settings-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.settings-panel {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  z-index: 30;
+  min-width: 10.5rem;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px rgba(20, 24, 31, 0.12);
+}
+
+.settings-panel.open {
+  display: flex;
+}
+
+.settings-panel a {
+  padding: 0.45rem 0.65rem;
 }
 
 @media (max-width: 860px) {
@@ -140,8 +182,29 @@ a {
     display: flex;
   }
 
-  .nav-links a {
+  .nav-links a,
+  .settings-toggle {
     padding: 0.55rem 0.65rem;
+  }
+
+  .settings-menu {
+    width: 100%;
+  }
+
+  .settings-toggle {
+    width: 100%;
+    min-height: 2.5rem;
+    justify-content: space-between;
+  }
+
+  .settings-panel {
+    position: static;
+    min-width: 0;
+    margin: 0;
+    padding: 0 0 0 0.65rem;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .site-header {

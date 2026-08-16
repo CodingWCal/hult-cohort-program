@@ -14,8 +14,8 @@ export default function InvestorsPage() {
         Most interview products coach a generic “interview.” {SITE.name} coaches
         the <em>job the candidate applied to</em> — 320 tracks, 25 interviewer
         prompts each, with a playbook and a debrief. Production app:{" "}
-        <a className="text-link" href="https://kiaracaesar5627-project-4.vercel.app">
-          kiaracaesar5627-project-4.vercel.app
+        <a className="text-link" href={`${SITE.productionUrl}/`}>
+          {SITE.productionUrl}/
         </a>
         .
       </p>

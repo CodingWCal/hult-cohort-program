@@ -13,7 +13,7 @@ npm run dev
 npm run build
 npm test
 npm run smoke
-npm run snapshot -- https://kiaracaesar5627-project-4.vercel.app
+npm run snapshot -- https://interviewroom-kiaracaesar5627.vercel.app
 ```
 
 ## Key paths

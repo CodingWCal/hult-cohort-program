@@ -2,8 +2,8 @@
 
 | Asset | Path / URL |
 |-------|------------|
-| One-pager | `/investors` · live https://kiaracaesar5627-project-4.vercel.app/investors |
-| Pitch deck (12 slides, print to PDF) | `/investors/deck` · live https://kiaracaesar5627-project-4.vercel.app/investors/deck |
+| One-pager | `/investors` · live https://interviewroom-kiaracaesar5627.vercel.app/investors |
+| Pitch deck (12 slides, print to PDF) | `/investors/deck` · live https://interviewroom-kiaracaesar5627.vercel.app/investors/deck |
 | Engagement log | `docs/INVESTOR_LOG.md` |
 | Business plan | `docs/02-business-plan.md` |
 | Market research | `docs/01-market-research.md` |

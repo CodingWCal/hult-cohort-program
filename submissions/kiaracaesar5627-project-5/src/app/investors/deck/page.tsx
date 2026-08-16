@@ -9,7 +9,7 @@ const SLIDES: { title: string; body: string[] }[] = [
     body: [
       `${SITE.name} — practice the interview for the job you applied to.`,
       "Founder: GitHub @kiaracaesar5627 · Hult Cohort Summer Pilot 2026",
-      "Live: https://kiaracaesar5627-project-4.vercel.app",
+      `Live: ${SITE.name} — ${SITE.productionUrl}/`,
     ],
   },
   {

@@ -4,7 +4,7 @@ Production interview-practice app plus venture packet (research, plan, deck, inv
 
 Extends the Week 4 Ludwitt learning app. Live URL is unchanged:
 
-**https://kiaracaesar5627-project-4.vercel.app**
+**https://interviewroom-kiaracaesar5627.vercel.app/**
 
 ## Commands
 
@@ -15,7 +15,7 @@ npm test
 npm run dev
 npm run build
 npm run smoke
-npm run snapshot -- https://kiaracaesar5627-project-4.vercel.app
+npm run snapshot -- https://interviewroom-kiaracaesar5627.vercel.app
 ```
 
 ## Docs

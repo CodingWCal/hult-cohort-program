@@ -2,7 +2,7 @@
  * Date-stamp a metrics snapshot from this app's own Ludwitt-compatible API.
  *
  *   node scripts/snapshot-metrics.mjs
- *   node scripts/snapshot-metrics.mjs https://kiaracaesar5627-project-4.vercel.app
+ *   node scripts/snapshot-metrics.mjs https://interviewroom-kiaracaesar5627.vercel.app
  */
 import { writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";

@@ -2,8 +2,8 @@
 
 ## Investor deck
 
-https://kiaracaesar5627-project-4.vercel.app/investors/deck  
-One-pager: https://kiaracaesar5627-project-4.vercel.app/investors
+https://interviewroom-kiaracaesar5627.vercel.app/investors/deck  
+One-pager: https://interviewroom-kiaracaesar5627.vercel.app/investors
 
 ## Business plan
 
@@ -11,10 +11,10 @@ One-pager: https://kiaracaesar5627-project-4.vercel.app/investors
 
 ## Production app + user metrics
 
-- App: https://kiaracaesar5627-project-4.vercel.app  
-- Health: https://kiaracaesar5627-project-4.vercel.app/health  
-- Metrics UI: https://kiaracaesar5627-project-4.vercel.app/metrics  
-- Metrics JSON: https://kiaracaesar5627-project-4.vercel.app/api/metrics-public  
+- App: https://interviewroom-kiaracaesar5627.vercel.app/  
+- Health: https://interviewroom-kiaracaesar5627.vercel.app/health  
+- Metrics UI: https://interviewroom-kiaracaesar5627.vercel.app/metrics  
+- Metrics JSON: https://interviewroom-kiaracaesar5627.vercel.app/api/metrics-public  
 - Authenticated: `GET /v1/apps/7f3e9c2a-4b1d-4e8f-9a6c-2d5e8f1a3b7c/metrics` with `Authorization: Bearer prod_key_demo`  
 - **Source of user count:** own reference API instance (same-origin `/v1`), **not** hosted Ludwitt.  
 - **Snapshot:** `docs/metrics-snapshot.json` (date-stamped at fetch).  

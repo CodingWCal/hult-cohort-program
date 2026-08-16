@@ -6,6 +6,7 @@ export const SITE = {
   topic: "Interview prep by role",
   handle: "kiaracaesar5627",
   cohort: "Hult Cohort Summer Pilot 2026",
+  productionUrl: "https://interviewroom-kiaracaesar5627.vercel.app",
 } as const;
 
 export function siteUrl(): string {
