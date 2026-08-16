@@ -17,7 +17,7 @@
 | Production app | https://latent-nu.vercel.app | Live |
 | Metrics source | [`GET /api/metrics`](https://latent-nu.vercel.app/api/metrics) · [`/proof`](https://latent-nu.vercel.app/proof) | Live; honest null unique users |
 | Snapshot | `venture-gge513/docs/metrics-snapshot.json` | 2026-08-16 production /api/metrics capture |
-| Investor log | `venture-gge513/docs/INVESTOR_LOG.md` | Empty until a real send |
+| Investor log | `venture-gge513/INVESTOR_LOG.md` | Empty until a real send |
 | Privacy | [`/privacy`](https://latent-nu.vercel.app/privacy) | Live (deployed 2026-08-16) |
 
 ## Summary

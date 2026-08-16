@@ -7,7 +7,7 @@
 | Business plan | `docs/business-plan.md` |
 | Market research | `docs/market-research.md` |
 | Financial model | `docs/financial-model.md` |
-| Investor log | `docs/INVESTOR_LOG.md` |
+| Investor log | `../INVESTOR_LOG.md` |
 
 PDF export of the deck and one-pager is **pending** (print to PDF from the markdown). The live product is the better artifact: https://latent-nu.vercel.app
 

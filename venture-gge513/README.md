@@ -21,7 +21,7 @@ a pick; a message to send.
 | Market research | [docs/market-research.md](docs/market-research.md) |
 | Financial model | [docs/financial-model.md](docs/financial-model.md) |
 | Investor materials index | [docs/investor-materials.md](docs/investor-materials.md) |
-| Investor log | [docs/INVESTOR_LOG.md](docs/INVESTOR_LOG.md) |
+| Investor log | [INVESTOR_LOG.md](INVESTOR_LOG.md) |
 | Production app checklist | [docs/production-app.md](docs/production-app.md) |
 | Metrics snapshot (from production) | [docs/metrics-snapshot.json](docs/metrics-snapshot.json) |
 
