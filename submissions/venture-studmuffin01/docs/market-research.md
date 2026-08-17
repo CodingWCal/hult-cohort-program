@@ -4,9 +4,21 @@
 
 Professionals are expected to use Microsoft Copilot and other AI assistants at work, but vague prompts produce unreliable drafts, invented facts, and outputs that managers cannot forward. Generic ChatGPT tips and long AI courses do not teach a short, repeatable workplace method. Teams waste time rewriting AI output instead of shipping decisions.
 
+## Customer discovery survey (completed)
+
+See [`survey-summary.md`](survey-summary.md) (redacted).
+
+- **n = 35** professionals · **13–15 August 2026** · Google Form *Prompt Like a Pro – AI Productivity Survey*
+- **Problem validation:** generic outputs, rewrite burden, low trust, weak prompt structure, context misses
+- **Demand signal:** stated WTP mostly free / under TT$150; meaningful minority TT$150–300; ≥1 at TT$300–700
+- **Pilot leads:** **11** asked to be contacted (~10 left contact details — held privately, not in repo)
+- **Not counted as:** product users, paying customers, or investor engagement
+
+**One-line claim:** The challenge is not AI access; it is prompt effectiveness and workflow application.
+
 ## Interviews
 
-*(Complete ≥5 real interviews — quotes + insights. No fabricated interviews.)*
+*(Optional deeper 1:1s — do not fabricate. Survey above is the primary discovery packet for this submission.)*
 
 ### Interview 1: {role} at {company type}
 - Quote:

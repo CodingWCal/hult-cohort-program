@@ -13,6 +13,14 @@
 
 See [`market-research.md`](market-research.md). Positioning: shorter and more workplace-specific than MOOCs; more structured than free prompt tips; productized vs internal slide decks.
 
+## Market validation
+
+Between **13–15 August 2026**, a survey of **35** professionals was run to validate demand for workplace AI productivity training (*Prompt Like a Pro*). Responses confirmed recurring challenges around prompt quality, generic outputs, excessive editing, and trust in AI-generated content. Stated willingness to pay clustered at free / under TT$150, with a meaningful minority at TT$150–300 (aligned with a low-ticket individual pilot). **11** respondents requested follow-up about a future pilot session (~10 qualified pilot leads with contact details held privately).
+
+Full redacted tallies: [`survey-summary.md`](survey-summary.md).
+
+These findings informed curriculum emphasis (SCORE / prompt craft) and pricing hypotheses. Survey respondents are **not** counted as app users or as investor engagements.
+
 ## Business model & pricing
 
 | Plan | Who | Price (starter hypothesis) | Includes |
@@ -69,7 +77,7 @@ See [`market-research.md`](market-research.md). Positioning: shorter and more wo
 | Copilot UI changes | Teach method (SCORE), not vendor UI trivia |
 | Free content competition | Speed-to-competence + team accountability |
 | Metrics / platform dependency | Self-host reference API; own event namespace |
-| Low willingness to pay | Interview-led pricing; start with team pilots |
+| Low willingness to pay | Survey shows free bias; lead with low-ticket / free pilot → convert paid; team seats later |
 
 ## Appendix
 

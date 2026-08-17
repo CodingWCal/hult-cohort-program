@@ -27,11 +27,11 @@ Generative AI is mandated at work; training budgets exist; Microsoft Copilot dis
 | Offer | Full SCORE course | Seat packs for managers |
 | Pilot price | $29 one-time / $9 mo *(hypothesis)* | $199 / 10 seats *(hypothesis)* |
 
-## Traction (fill weekly)
+## Traction
 
 - Live app: https://prompt-like-a-pro-red.vercel.app  
-- External users: _TBD_ (venture metrics, date-stamped)  
-- Customer interviews: _TBD_ / 5  
+- Customer discovery: **35** survey responses (13–15 Aug 2026) — problem + soft WTP validated; **11** pilot leads  
+- External product users: _TBD_ (venture metrics, date-stamped; survey ≠ users)  
 
 ## The ask
 

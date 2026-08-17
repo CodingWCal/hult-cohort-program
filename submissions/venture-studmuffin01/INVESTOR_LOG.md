@@ -20,4 +20,10 @@ Redact personal emails/phone numbers before pasting into the public PR body (pat
 
 ## Log
 
-<!-- Add entries below -->
+<!-- After you SEND the investor email, fill Name / Firm / Outcome. Do not invent. -->
+
+## 2026-08-16 — {Name} — {Title} at {Firm}
+- Type: email
+- Outcome: Pitch + one-pager sent; asked for 20 min feedback / intro
+- Materials: `docs/pitch-deck.pdf`, `docs/one-pager.pdf`
+- Verified by placement lead: ☐

@@ -26,6 +26,7 @@ MVP workplace AI learning platform (LMS) that helps professionals master **promp
 | Artifact | Path |
 |----------|------|
 | Market research | [`docs/market-research.md`](docs/market-research.md) |
+| Survey summary (redacted) | [`docs/survey-summary.md`](docs/survey-summary.md) |
 | Business plan | [`docs/business-plan.md`](docs/business-plan.md) |
 | Pitch deck | [`docs/pitch-deck.md`](docs/pitch-deck.md) → export `docs/pitch-deck.pdf` |
 | One-pager | [`docs/one-pager.md`](docs/one-pager.md) → export `docs/one-pager.pdf` |

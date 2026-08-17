@@ -1,25 +1,3 @@
-# Submission PR checklist — Project 5
-
-## GitHub PR
-
-- **Title:** `[P2-Venture] Submission — studmuffin01`
-- **Base:** `projects/summer26/phase-2-venture` (**not** `main`)
-- **Head:** `participants/summer26/phase-2-venture/studmuffin01`
-- **Merge by:** Sunday 16 August 2026, 17:00 Eastern
-- **Open PR:** https://github.com/rogerSuperBuilderAlpha/hult-cohort-program/pull/296
-
-## PR body must include
-
-- [x] Investor deck link/path in repo (`docs/pitch-deck.pdf`)
-- [x] Business plan path (`docs/business-plan.md`)
-- [ ] App URL + user metrics (source named + date-stamped) — see `docs/METRICS.md`
-- [ ] Investor touch log path (`INVESTOR_LOG.md`, redact PII) — placeholder until real send
-- [x] Note if using reference API because Ludwitt portal/host failed
-- [x] Customer discovery summary path
-
-## Suggested PR body draft (paste into #296)
-
-```markdown
 ## Summary
 AI Prompting Academy — MVP workplace AI LMS for professional prompt craft (SCORE / Prompt Like a Pro), with individual + team pricing.
 
@@ -47,10 +25,3 @@ AI Prompting Academy — MVP workplace AI LMS for professional prompt craft (SCO
 ## Notes
 Used reference API for venture metrics per staff guidance (Week 4 Ludwitt host/docs issues).
 Discovery packet and PDFs added after PR open; requesting staff review of evidence pack.
-```
-
-## Push pack (local)
-
-```powershell
-powershell -ExecutionPolicy Bypass -File submissions/venture-studmuffin01/scripts/push-pack.ps1
-```

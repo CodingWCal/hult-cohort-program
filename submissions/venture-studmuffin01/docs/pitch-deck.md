@@ -14,10 +14,11 @@ Export this outline to `pitch-deck.pdf` (Google Slides / PowerPoint / Keynote �
 8. **Competition** — vs MOOCs, free tips, internal L&D  
 9. **Business model** — Individual + team seats; starter prices  
 10. **Go-to-market** — Founder-led distribution; design partners  
-11. **Traction** — External user count (date-stamped); interviews  
-12. **Ask** — What you’re asking the investor for (advice / pilot intro / capital — be specific)  
-13. **Team** — Founder + why this week’s build proves execution  
-14. **Close** — Contact + live URL  
+11. **Customer discovery** — 35 survey responses (13–15 Aug 2026); generic output / rewrite / trust / prompt skill; 11 pilot leads; WTP mostly free–TT$300  
+12. **Traction** — External user count (date-stamped); pilot conversion from survey leads  
+13. **Ask** — What you’re asking the investor for (advice / pilot intro / capital — be specific)  
+14. **Team** — Founder + why this week’s build proves execution  
+15. **Close** — Contact + live URL  
 
 ## One-liner
 
